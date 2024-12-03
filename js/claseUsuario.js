@@ -22,14 +22,9 @@ Validado: ${this.validado}`;
     }
 }
 
-let usuarioAdmin = new Usuario("admin", "admin", "admin");
-usuarioAdmin.validar();
-
-let usuarios = [];
-usuarios.push(usuarioAdmin);
 
 //escribir
-localStorage.setItem("usuarios", JSON.stringify(usuarios));
+//localStorage.setItem("usuarios", JSON.stringify(usuarios));
 
 //leer
-console.log(JSON.parse(localStorage.getItem("usuarios")));
+//console.log(JSON.parse(localStorage.getItem("usuarios")));

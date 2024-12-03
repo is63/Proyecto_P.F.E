@@ -9,7 +9,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     //Guardar los Formularios
     let formLogIn = document.getElementById("formLogIn");
-    
+
     let formRegistrarse = document.getElementById("formRegistrar");
 
     //Guardar los campos del formulario de LogIn
@@ -22,27 +22,38 @@ window.addEventListener("DOMContentLoaded", () => {
     let rolRegistrar = document.getElementById("rolRegistrarse");
 
     //Guardo el array de usuarios del LocalStorage
+
     let usuarios = JSON.parse(localStorage.getItem("usuarios"));
+    if (!usuarios) {  //Si no existe el array de usuarios los creo de nuevo
+
+        usuarios = [];
+
+        //Añado el usuario Admin y uno de prueba 
+        let usuarioAdmin = new Usuario("admin", "admin", "admin");
+        usuarioAdmin.validar();
+        usuarios.push(usuarioAdmin);
+
+        let usuarioNuevo = new Usuario("Valentin", "Villa", "Alumno");
+        usuarios.push(usuarioNuevo);
+    }
     //console.log(usuarios);
 
-    //Guardar los usuarios a registrar sin borrarlos desde el principio
-    let usuariosARegistrar = JSON.parse(localStorage.getItem("usuariosARegistrar"));
-    console.log(usuarios == usuariosARegistrar);
-    if(usuarios != usuariosARegistrar){
-        usuariosARegistrar = usuarios;
-        console.log(usuarios);
-        console.log(usuariosARegistrar);
-    }
-    console.log(usuarios == usuariosARegistrar);
 
+    //Muestro todos los usuarios del array
+    usuarios.map(usuario => console.log(usuario));
+    //console.log(usuarios);
+
+
+    //Creo un elemento "<p>" para mostrar el mensaje
+    let mensaje = document.createElement("p");
+    //Añado el mensaje de error debajo del h1 del formulario
+    formLogIn.firstElementChild.firstElementChild.after(mensaje);
+
+
+
+
+    //Creo un valor para mostar un mensaje cuando el login sea incorrecto
     let mensajeFlashActivo = true;
-    
-    /*if (usuariosARegistrar == null || usuarios.length > usuariosARegistrar.length) {
-        alert();
-        localStorage.setItem("usuariosARegistrar", JSON.stringify(usuarios));
-        console.log(JSON.parse(localStorage.getItem("usuariosARegistrar")));
-    }*/
-
 
     //Funcion para mostrar el formulario de registro
     botonIrRegistrarse.addEventListener("click", function (event) {
@@ -85,7 +96,7 @@ window.addEventListener("DOMContentLoaded", () => {
         let nuevoUsuario = new Usuario(email, contrasena, rol);
         usuarios.push(nuevoUsuario);
         console.log(usuarios);
-        console.log(usuarios.length);
+
 
 
 
@@ -94,31 +105,49 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 
 
+    //Funcion que comprueba que los datos introducidos para iniciar sesion son correctos
     function comprobarUsuario(email, contrasena) {
+
+        //Recorro el array de usuarios para ver si coincide algun usuario con los datos introducidos
         for (let i = 0; i < usuarios.length; i++) {
-            if (email == usuarios[i].nombre && contrasena == usuarios[i].contrasena && usuarios[i].validado) {
-                localStorage.setItem("usuarioSesion", email);
-                alert("Inicio Completo");
-                /**
-                 * Redirección
-                */
-                break;
+            //Si coinciden redireccciono a la siguiente página
+            if (usuarios[i].validado) {
+                if (email == usuarios[i].nombre && contrasena == usuarios[i].contrasena) {
+                    //Guardo el usuario ue ha iniciado sesion para mostrar informacion y opciones en páginas siguientes
+                    localStorage.setItem("usuarioSesion", email + " " + contrasena);
+                    alert("Inicio Completo");
+                    /**
+                     * Redirección
+                    */
+                    break;
+                }
+
+                //Si los datos no son correctos vacio los campos para que los vuelvan a rellenar
+                emailLogIn.value = "";
+                contrasenaLogIn.value = "";
+
+                //Si el mensaje esta disponible porque no ha salido antes se ejecuta el if
+
+                //contenido del mensaje
+                mensaje.textContent = "email o contrasena incorrecto";
+                //estilos aplicados para el mensaje
+                mensaje.style.color = "red";
+                mensaje.style.fontWeight = "bold";
+                mensaje.style.margin = "1.5vh";
+                mensaje.style.textAlign = "center";
+
+
+
             }
-            //alert("email o contraseña equivocados");
-            emailLogIn.value = "";
-            contrasenaLogIn.value = "";
-
-            if(mensajeFlashActivo){
-                mensajeFlashActivo = false;
-            let mensaje = document.createElement("p");
-            mensaje.textContent = "email o contrasena incorrecto";
-            mensaje.style.color = "red";
-            mensaje.style.fontWeight = "bold";
-            mensaje.style.margin = "1.5vh";
-            mensaje.id = "mensajeFlash";
-
-            formLogIn.firstElementChild.firstElementChild.after(mensaje);}
-
+            else if (email == usuarios[i].nombre && contrasena == usuarios[i].contrasena) {
+                //contenido del mensaje
+                mensaje.textContent = "Usuario no Validado";
+                //estilos aplicados para el mensaje
+                mensaje.style.color = "red";
+                mensaje.style.fontWeight = "bold";
+                mensaje.style.margin = "1.5vh";
+                mensaje.style.textAlign = "center";
+            }
         }
     }
 

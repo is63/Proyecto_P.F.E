@@ -1,111 +1,100 @@
 * {
-    margin: 0px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    align-items: center;
-    width: 99%;
-    /*background-image: radial-gradient(circle 50vh, #90afad, #424d4c);;*/
-    background-image: url("../imagenes/");
-}
-
-header {
-    border-bottom: 1px solid black;
-    width: 100%;
-    text-align: center;
-    background-color: turquoise;
-    padding: 2vh;
-    display: none;
-}
-
-main {
-    height: 90vh;
-}
-
-footer {
-    border-top: 1px solid black;
-    width: 100%;
-    text-align: center;
-    background-color: turquoise;
-    padding: 2vh;
-    display: none;
-}
-
-form input {
-    margin: 0.5vh 1vh 1vh 2vh;
-    height: 3vh;
-    width: 25vh;
-    border-radius: 10px;
-}
-
-select {
-    margin-top: 1vh;
-    width: 10vh;
-    text-align: center;
-    align-self: center;
-}
-
-div {
-    background-color:#3fd8ce;
-    border: 1px solid black;
-    width: 30vh;
-    text-align: center;
-    border-radius: 15px;
-    padding: 0.5vh;
-}
-
-form button {
-    border: none;
-    background-color: transparent;
-    color: blue;
-    text-decoration: underline;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.6vh;
-}
-
-form input:last-of-type {
-    background-color: rgb(217, 221, 221);
-    border:1px solid black;
-}
-
-form h2 {
-    margin-top: 2vh;
-}
-
-input:nth-child(2) {
-    margin-top: 2vh;
-}
-
-
-#botonLogIn {
-    display: flex;
-    flex-direction: column;
-}
-
-#botonLogIn select {
-    margin-left: 10vh;
-    width: 10vh;
-    text-align: center;
-}
-
-#formRegistrar {
-    display: none;
-    flex-direction: column;
-    height: 50vh;
-    justify-content: space-around;
-}
-#botonRegistrar {
-    display: flex;
-    flex-direction: column;
-    height: 45vh;
-    justify-content: space-around;
-}
-
-main {
+    font-family: Arial, sans-serif;
+    background-image: url(../imagenes/fondo_LogIn.jpg);
+    color: #333;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh; 
+    
+}
+
+
+header h1, footer h1 {
+    display: none;
+}
+
+
+#formLogIn, #formRegistrar {
+    width: 37vh;
+    background-color: #fff;
+    padding: 2vh;
+    border-radius: 8px;
+    display: none; 
+    justify-content: center;
+    box-shadow: 5px 2px 500px 10px rgb(204, 202, 202);
+}
+
+#formLogIn {
+    display: flex; 
+}
+
+form h2 {
+    font-size: 1.8rem;
+    color: #074167;
+    margin-bottom: 2vh;
+    text-align: center;
+}
+
+form input, form select {
+    width: 100%;
+    margin: 15px 0;
+    padding: 1.3vh;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+}
+
+
+form input:last-of-type {
+    background-color: #074167;
+    color: white;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    padding: 1.2vh;
+    margin-top: 3vh;
+    transition: background-color 0.3s;
+}
+
+#formLogIn input:last-of-type{
+    margin-top: 1vh;
+}
+
+form input:last-of-type:hover {
+    background-color: #0a5879;
+}
+form input:focus {
+    background-color: #a4daf183;
+}
+form input:last-of-type:focus {
+    background-color: #0a5879;
+}
+
+
+form label a {
+    color: #074167;
+    text-decoration: underline;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+form label a:hover {
+    color: #0a5879;
+    text-decoration: none;
+}
+
+
+form label {
+    font-size: 0.9rem;
+    color: #666;
+    display: block;
+    margin-top: 1.3vh;
+    text-align: center;
 }
