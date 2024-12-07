@@ -3,18 +3,22 @@
     padding: 0; /* Eliminar relleno predeterminado */
 }
 
+body{
+    background-image: url(/imagenes/fondo_Acciones.jpg); /* Imagen de fondo */
+    background-repeat: no-repeat; /*Repeticion de imagen de fondo*/
+    background-size: cover; /*Tamaño de Imagen de fondo*/
+}
 main {
     display: flex; /* Usar flexbox para la disposición */
     flex-direction: column; /* Apilar elementos verticalmente */
     align-items: center; /* Centrar horizontalmente los elementos */
     justify-content: center; /* Centrar verticalmente los elementos */
     height: 88vh; /* Altura del contenedor principal */
-    background-image: url(/imagenes/fondo_LogIn.jpg); /* Imagen de fondo */
 }
 
 footer, header {
     height: 6vh; /* Altura de los encabezados y pies de página */
-    background-color: #419affde; /* Color de fondo con opacidad */
+    background-color: #60a8fade; /* Color de fondo con opacidad */
     text-align: center; /* Centrar el texto horizontalmente */
     line-height: 5.5vh; /* Altura de línea para centrar el texto verticalmente */
 }

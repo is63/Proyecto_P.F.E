@@ -1,0 +1,62 @@
+* {
+    margin: 0; /* Eliminar márgenes predeterminados */
+    padding: 0; /* Eliminar relleno predeterminado */
+}
+
+body {
+    display: flex; /* Usar flexbox para la disposición */
+    flex-direction: column; /* Apilar elementos verticalmente */
+    height: 100vh; /* Altura de ventana */
+    background-image: url(/imagenes/fondo_Examen.jpeg); /* Imagen de fondo */
+    background-size: 95vh; /* Cubrir toda el área */
+    background-repeat: no-repeat; /* No repetir la imagen de fondo */
+    background-position: center; /* Centrar la imagen de fondo */
+    background-color: rgba(255, 255, 255, 0.267); /* Color de fondo con opacidad */
+    background-blend-mode: overlay; /* Mezclar el color de fondo con la imagen */
+}
+
+footer, header {
+    height: 6vh; /* Altura de los encabezados y pies de página */
+    background-color: #60a8fade; /* Color de fondo con opacidad */
+    text-align: center; /* Centrar el texto horizontalmente */
+    line-height: 5.5vh; /* Altura de línea para centrar el texto verticalmente */
+}
+
+main {
+    flex: 1; /* Permitir que el main ocupe el espacio restante */
+    display: flex; /* Usar flexbox para organizar el contenido */
+    flex-direction: column; /* Apilar elementos verticalmente */
+    align-items: center; /* Centrar horizontalmente */
+    justify-content: center; /* Centrar verticalmente */
+}
+
+p {
+    font-size: 24px; /* Tamaño de la fuente del texto */
+    color: black; /* Color del texto */
+    margin-bottom: 20px; /* Espacio entre el texto y los botones */
+}
+
+#contenedor {
+    display: flex; /* Usar flexbox para la disposición de los botones */
+    flex-direction: row; /* Disposición horizontal de los botones */
+    align-items: center; /* Centrar los botones verticalmente */
+    justify-content: space-evenly; /* Espacio uniforme entre los botones */
+    width: 100%; /* Ancho completo del contenedor */
+}
+
+button {
+    width: 30%; /* Ancho de cada botón */
+    height: 40vh; /* Altura de cada botón */
+    background-color: #86bdfcc7; /* Color de fondo de los botones */
+    color: black; /* Color del texto de los botones */
+    border: none; /* Sin borde */
+    cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
+    text-align: center; /* Centrar texto dentro del botón */
+    line-height: 40px; /* Centrar verticalmente el texto del botón */
+    font-family: 'Times New Roman', Times, serif; /* Tipo de letra */
+    font-weight: bold; /* Negrita */
+    font-size: 25px; /* Tamaño de fuente del texto del botón */
+    margin: 0 10px; /* Margen horizontal para separación entre botones */
+}
+
+
