@@ -72,21 +72,25 @@ section div{
     background-color: #60a8fa8a;
 }
 
-p {
-    /* Estilo base para todos los <p> */
-    padding: 1vh; /* Espaciado interno */
-}
-
 /* Fondo rojo para los elementos <p> en posiciones impares */
 #verificados p:nth-child(odd),
 #noVerificados p:nth-child(odd) {
-    background-color: #b6d7fc88; /* Fondo rojo */
+    background-color: #b6d7fc88; 
 }
 
 /* Sin fondo para los elementos <p> en posiciones pares */
 #verificados p:nth-child(even),
 #noVerificados p:nth-child(even) {
-    background-color: transparent; /* Sin fondo */
+    background-color: transparent;
+}
+
+p {
+    padding: 1vh; /* Espaciado interno */
+}
+input[type="checkbox"] {
+    width: 2vh; /* Ajusta el ancho según sea necesario */
+    height: 2vh; /* Ajusta la altura según sea necesario */
+    margin-right: 4vh;
 }
 
 
