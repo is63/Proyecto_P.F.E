@@ -3,10 +3,11 @@
     padding: 0; /* Eliminar relleno predeterminado */
 }
 
-body{
-    background-image: url(/imagenes/fondo_Acciones.jpg); /* Imagen de fondo */
-    background-repeat: no-repeat; /*Repeticion de imagen de fondo*/
-    background-size: cover; /*Tamaño de Imagen de fondo*/
+body {
+    display: flex; /* Usar flexbox para la disposición */
+    flex-direction: column; /* Apilar elementos verticalmente */
+    height: 100vh; /* Altura de ventana */
+    background-color: #f0f0f0c7;
 }
 
 header {
@@ -31,12 +32,63 @@ header {
 }
 
 main {
-    display: flex; /* Usar flexbox para la disposición */
+    flex: 1; /* Permitir que el main ocupe el espacio restante */
+    display: flex; /* Usar flexbox para organizar el contenido */
     flex-direction: column; /* Apilar elementos verticalmente */
-    align-items: center; /* Centrar horizontalmente los elementos */
-    justify-content: center; /* Centrar verticalmente los elementos */
-    height: 88vh; /* Altura del contenedor principal */
+    align-items: center; /* Centrar horizontalmente */
+    justify-content: center; /* Centrar verticalmente */
 }
+
+#gestion{
+    display: flex;
+    flex-direction: column;
+    height: 70vh;
+    width: 130vh;
+    border: 3px solid black;
+    
+}
+
+#verificados{
+    height: 50%;
+}
+
+#noVerificados{
+    border-top: 3px solid black;
+    height: 50%;
+}
+#noVerificados p {
+    display: flex; /* Usar flexbox para el párrafo */
+    justify-content: space-between; /* Espacio entre el texto y el checkbox */
+    align-items: center; /* Centrar verticalmente */
+}
+
+section div{
+    display: flex;
+    justify-content: space-between;
+    padding: 2vh;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    border-bottom: 1px solid black;
+    background-color: #60a8fa8a;
+}
+
+p {
+    /* Estilo base para todos los <p> */
+    padding: 1vh; /* Espaciado interno */
+}
+
+/* Fondo rojo para los elementos <p> en posiciones impares */
+#verificados p:nth-child(odd),
+#noVerificados p:nth-child(odd) {
+    background-color: #b6d7fc88; /* Fondo rojo */
+}
+
+/* Sin fondo para los elementos <p> en posiciones pares */
+#verificados p:nth-child(even),
+#noVerificados p:nth-child(even) {
+    background-color: transparent; /* Sin fondo */
+}
+
 
 .footer-content, header {
     height: 6vh; /* Altura de los encabezados y pies de página */
@@ -58,6 +110,7 @@ main {
     font-weight: bolder; /*Estilo o Tamaño del texto*/
 }
 
+
 #contenedor {
     display: flex; /* Usar flexbox para la disposición de los botones */
     flex-direction: row; /* Disposición horizontal de los botones */
@@ -66,16 +119,10 @@ main {
     width: 100%; /* Ancho completo del contenedor */
 }
 
-p {
-    font-size: 24px; /* Tamaño de la fuente del texto */
-    color: black; /* Color del texto */
-    margin-bottom: 20px; /* Espacio entre el texto y los botones */
-}
-
 button {
-    width: 25%; /* Ancho de cada botón */
-    height: 40vh; /* Altura de cada botón */
-    background-color: #e5e5e5f1; /* Color de fondo de los botones */
+    width: 30vh; /* Ancho de cada botón */
+    height: 6vh; /* Altura de cada botón */
+    background-color: #5ba4f7e5; /* Color de fondo de los botones */
     color: black; /* Color del texto de los botones */
     border: none; /* Sin borde */
     cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
@@ -83,19 +130,10 @@ button {
     line-height: 40px; /* Centrar verticalmente el texto del botón */
     font-family: 'Times New Roman', Times, serif; /* Tipo de letra */
     font-weight: bold; /* Negrita */
-    font-size: 25px; /* Tamaño de fuente del texto del botón */
+    font-size: 20px; /* Tamaño de fuente del texto del botón */
+    margin-top: 2vh;
 }
 
-
-button:hover {
-    animation: shake 0.5s; /* Aplica la animación */
-    background-color: #bbbabaef; /* Cambia el color de fondo */
-}
-
-@keyframes shake {
-    0% { transform: rotate(5deg); } /* botón gira a la derecha  */
-    25% { transform: rotate(-5deg); } /* botón gira a la izquierda */
-    50% { transform: rotate(5deg); } /* botón gira a la derecha */
-    75% { transform: rotate(-5deg); } /* botón gira a la izquierda */
-    100% { transform: rotate(0deg); } /* vuelve al estado inicial */
+button:hover{
+background-color: #4498f8;
 }

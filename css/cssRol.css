@@ -3,35 +3,59 @@
     padding: 0; /* Eliminar relleno predeterminado */
 }
 
+body {
+    display: flex; /* Usar flexbox para el cuerpo */
+    flex-direction: column; /* Apilar elementos verticalmente */
+    height: 100vh; /* Altura completa de la ventana */
+}
+
+header {
+    position: flex; /* Fijar el header en la parte superior */
+    height: 6vh; /* Altura del encabezado */
+    background-color: #419affde; /* Color de fondo */
+    display: flex; /* Usar flexbox para el contenido del header */
+    justify-content: center; /* Centrar horizontalmente los elementos */
+    align-items: center; /* Centrar verticalmente los elementos */
+}
+
+.header-content {
+    display: flex; /* Usar flexbox para el contenido del encabezado */
+    align-items: center; /* Centrar verticalmente los elementos */
+    justify-content: space-between; 
+    width: 100%; /* Ancho completo para alinear correctamente */
+    padding: 2vh; /* Espaciado horizontal dentro del header */
+}
+
+.header-content img {
+    height: 5vh; /* Ajustar la altura de la imagen */
+}
+
 main {
     display: flex; /* Usar flexbox para la disposición */
     flex-direction: column; /* Apilar elementos verticalmente */
     align-items: center; /* Centrar horizontalmente los elementos */
     justify-content: center; /* Centrar verticalmente los elementos */
-    height: 88vh; /* Altura del contenedor principal */
+    flex-grow: 1; /* Permite que el main ocupe el espacio restante */
     background-image: url(/imagenes/fondo_LogIn.jpg); /* Imagen de fondo */
-}
-
-.footer-content, header {
-    height: 6vh; /* Altura de los encabezados y pies de página */
-    background-color: #419affde; /* Color de fondo con opacidad */
-    text-align: center; /* Centrar el texto horizontalmente */
-    line-height: 5.5vh; /* Altura de línea para centrar el texto verticalmente */
+    background-size: cover; /* Asegura que la imagen cubra todo el contenedor */
+    padding-top: 8vh; /* Espacio superior para evitar que el contenido se superponga al header */
 }
 
 .footer-content {
     display: flex; /* Usar flexbox para el contenido del pie de página */
-    justify-content: space-between; /* Espacio entre los elementos */
+    justify-content: space-between; /* Centrar horizontalmente los elementos */
     align-items: center; /* Centrar verticalmente los elementos */
     width: 100%; /* Ancho completo del footer */
+    height: 6vh; /* Altura del footer */
+    background-color: #419affde; /* Color de fondo */
 }
 
-.footer-content a{
-    text-decoration: none; /*Decoraciones del texto*/
-    color:white; /*Color del texto*/
-    font-weight: bolder; /*Estilo o Tamaño del texto*/
+.footer-content a {
+    text-decoration: none; /* Sin decoraciones del texto */
+    color: white; /* Color del texto */
+    font-weight: bolder; /* Estilo o tamaño del texto */
+    margin: 0 1vh; /* Espacio entre los enlaces */
 }
-
 
 #contenedor {
     display: flex; /* Usar flexbox para la disposición de los botones */
@@ -42,13 +66,14 @@ main {
 }
 
 p {
-    font-size: 24px; /* Tamaño de la fuente del texto */
+    font-size: 30px; /* Tamaño de la fuente del texto */
     color: black; /* Color del texto */
-    margin-bottom: 20px; /* Espacio entre el texto y los botones */
+    margin-bottom: 9vh; /* Espacio entre el texto y los botones */
+    font-weight: bolder; /* Negrita */
 }
 
 button {
-    width: 30%; /* Ancho de cada botón */
+    width: 25%; /* Ancho de cada botón */
     height: 40vh; /* Altura de cada botón */
     background-color: #e5e5e5f1; /* Color de fondo de los botones */
     color: black; /* Color del texto de los botones */
@@ -59,4 +84,17 @@ button {
     font-family: 'Times New Roman', Times, serif; /* Tipo de letra */
     font-weight: bold; /* Negrita */
     font-size: 25px; /* Tamaño de fuente del texto del botón */
+}
+
+button:hover {
+    animation: shake 0.5s; /* Aplica la animación */
+    background-color: #bbbabaef; /* Cambia el color de fondo */
+}
+
+@keyframes shake {
+    0% { transform: rotate(5deg); } /* botón gira a la derecha */
+    25% { transform: rotate(-5deg); } /* botón gira a la izquierda */
+    50% { transform: rotate(5deg); } /* botón gira a la derecha */
+    75% { transform: rotate(-5deg); } /* botón gira a la izquierda */
+    100% { transform: rotate(0deg); } /* vuelve al estado inicial */
 }

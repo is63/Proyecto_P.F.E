@@ -15,6 +15,35 @@ body {
     background-blend-mode: overlay; /* Mezclar el color de fondo con la imagen */
 }
 
+header {
+    position: flex; /* Fijar el header en la parte superior */
+    height: 6vh; /* Altura del encabezado */
+    background-color: #419affde; /* Color de fondo */
+    display: flex; /* Usar flexbox para el contenido del header */
+    justify-content: center; /* Centrar horizontalmente los elementos */
+    align-items: center; /* Centrar verticalmente los elementos */
+}
+
+.header-content {
+    display: flex; /* Usar flexbox para el contenido del encabezado */
+    align-items: center; /* Centrar verticalmente los elementos */
+    justify-content: space-between; 
+    width: 100%; /* Ancho completo para alinear correctamente */
+    padding: 2vh; /* Espaciado horizontal dentro del header */
+}
+
+.header-content img {
+    height: 5vh; /* Ajustar la altura de la imagen */
+}
+
+main {
+    flex: 1; /* Permitir que el main ocupe el espacio restante */
+    display: flex; /* Usar flexbox para organizar el contenido */
+    flex-direction: column; /* Apilar elementos verticalmente */
+    align-items: center; /* Centrar horizontalmente */
+    justify-content: center; /* Centrar verticalmente */
+}
+
 .footer-content, header {
     height: 6vh; /* Altura de los encabezados y pies de página */
     background-color: #60a8fade; /* Color de fondo con opacidad */
@@ -35,13 +64,6 @@ body {
     font-weight: bolder; /*Estilo o Tamaño del texto*/
 }
 
-main {
-    flex: 1; /* Permitir que el main ocupe el espacio restante */
-    display: flex; /* Usar flexbox para organizar el contenido */
-    flex-direction: column; /* Apilar elementos verticalmente */
-    align-items: center; /* Centrar horizontalmente */
-    justify-content: center; /* Centrar verticalmente */
-}
 
 p {
     font-size: 24px; /* Tamaño de la fuente del texto */
@@ -72,4 +94,17 @@ button {
     margin: 0 10px; /* Margen horizontal para separación entre botones */
 }
 
+
+button:hover {
+    animation: shake 0.5s; /* Aplica la animación */
+    background-color: #4b9dfcc7; /* Cambia el color de fondo */
+}
+
+@keyframes shake {
+    0% { transform: rotate(5deg); } /* botón gira a la derecha  */
+    25% { transform: rotate(-5deg); } /* botón gira a la izquierda */
+    50% { transform: rotate(5deg); } /* botón gira a la derecha */
+    75% { transform: rotate(-5deg); } /* botón gira a la izquierda */
+    100% { transform: rotate(0deg); } /* vuelve al estado inicial */
+}
 
