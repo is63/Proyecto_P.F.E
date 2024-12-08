@@ -7,12 +7,7 @@ body {
     display: flex; /* Usar flexbox para la disposición */
     flex-direction: column; /* Apilar elementos verticalmente */
     height: 100vh; /* Altura de ventana */
-    background-image: url(/imagenes/fondo_Examen.jpeg); /* Imagen de fondo */
-    background-size: 95vh; /* Cubrir toda el área */
-    background-repeat: no-repeat; /* No repetir la imagen de fondo */
-    background-position: center; /* Centrar la imagen de fondo */
-    background-color: rgba(255, 255, 255, 0.267); /* Color de fondo con opacidad */
-    background-blend-mode: overlay; /* Mezclar el color de fondo con la imagen */
+    background-color: #f0f0f0c7;
 }
 
 header {
@@ -44,6 +39,39 @@ main {
     justify-content: center; /* Centrar verticalmente */
 }
 
+#gestion{
+    display: flex;
+    flex-direction: column;
+    height: 70vh;
+    width: 130vh;
+    border: 3px solid black;
+    background-color:#b6d7fc88;
+}
+
+#gestion section{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    border-bottom: 2px solid black;
+    background-color: #7ab8ffe3;
+}
+
+#gestion p:nth-child(even) {
+    background-color: #b6d7fcd2; 
+}
+
+/* Sin fondo para los elementos <p> en posiciones pares */
+#gestion p:nth-child(odd) {
+    background-color: transparent;
+}
+
+p {
+    display: flex;
+    justify-content: space-between;
+    padding: 1vh;
+}
+
+
 .footer-content, header {
     height: 6vh; /* Altura de los encabezados y pies de página */
     background-color: #60a8fade; /* Color de fondo con opacidad */
@@ -65,12 +93,6 @@ main {
 }
 
 
-p {
-    font-size: 24px; /* Tamaño de la fuente del texto */
-    color: black; /* Color del texto */
-    margin-bottom: 20px; /* Espacio entre el texto y los botones */
-}
-
 #contenedor {
     display: flex; /* Usar flexbox para la disposición de los botones */
     flex-direction: row; /* Disposición horizontal de los botones */
@@ -79,10 +101,10 @@ p {
     width: 100%; /* Ancho completo del contenedor */
 }
 
-button {
-    width: 30%; /* Ancho de cada botón */
-    height: 40vh; /* Altura de cada botón */
-    background-color: #86bdfcc7; /* Color de fondo de los botones */
+#crearPregunta {
+    width: 30vh; /* Ancho de cada botón */
+    height: 6vh; /* Altura de cada botón */
+    background-color: #5ba4f7e5; /* Color de fondo de los botones */
     color: black; /* Color del texto de los botones */
     border: none; /* Sin borde */
     cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
@@ -90,22 +112,11 @@ button {
     line-height: 40px; /* Centrar verticalmente el texto del botón */
     font-family: 'Times New Roman', Times, serif; /* Tipo de letra */
     font-weight: bold; /* Negrita */
-    font-size: 25px; /* Tamaño de fuente del texto del botón */
-    margin: 0 10px; /* Margen horizontal para separación entre botones */
-    
+    font-size: 20px; /* Tamaño de fuente del texto del botón */
+    margin-top: 2vh;
+    border-radius: 10px;
 }
 
-
-button:hover {
-    animation: shake 0.5s; /* Aplica la animación */
-    background-color: #4b9dfcc7; /* Cambia el color de fondo */
+#crearPregunta:hover{
+background-color: #4498f8;
 }
-
-@keyframes shake {
-    0% { transform: rotate(5deg); } /* botón gira a la derecha  */
-    25% { transform: rotate(-5deg); } /* botón gira a la izquierda */
-    50% { transform: rotate(5deg); } /* botón gira a la derecha */
-    75% { transform: rotate(-5deg); } /* botón gira a la izquierda */
-    100% { transform: rotate(0deg); } /* vuelve al estado inicial */
-}
-
