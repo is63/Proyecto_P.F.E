@@ -81,7 +81,7 @@ form textarea {
 }
 
 form textarea {
-    resize: vertical;
+    resize: none;
 }
 
 #categorias label {
