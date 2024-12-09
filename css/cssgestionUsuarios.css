@@ -39,55 +39,90 @@ main {
     justify-content: center; /* Centrar verticalmente */
 }
 
-#gestion{
+/* Contenedor general para la gestión */
+#gestion {
     display: flex;
     flex-direction: column;
     height: 70vh;
     width: 130vh;
     border: 3px solid black;
-    
+    box-shadow: 10px 10px 5px #aaaaaa;
+    background-color: #ffffff; /* Fondo blanco para contraste */
 }
 
-#verificados{
-    height: 50%;
+/* Secciones Verificados y No Verificados */
+#verificados, #noVerificados {
+    height: 50%; /* Cada sección ocupa la mitad del espacio disponible */
+    overflow-y: auto; /* Habilitar scroll vertical cuando el contenido es largo */
+    padding: 1vh; /* Espaciado interno */
+    border-bottom: 3px solid black; /* Divisor entre secciones */
 }
 
-#noVerificados{
-    border-top: 3px solid black;
-    height: 50%;
-}
-#noVerificados p {
-    display: flex; /* Usar flexbox para el párrafo */
-    justify-content: space-between; /* Espacio entre el texto y el checkbox */
-    align-items: center; /* Centrar verticalmente */
+/* Eliminar borde en la última sección */
+#noVerificados {
+    border-bottom: none;
 }
 
-section div{
+/* Encabezados de las secciones */
+section div {
     display: flex;
     justify-content: space-between;
-    padding: 2vh;
-    padding-top: 0px;
-    padding-bottom: 0px;
+    padding: 1vh;
+    padding-top: 0;
+    padding-bottom: 0;
     border-bottom: 1px solid black;
     background-color: #60a8fa8a;
 }
 
-/* Fondo rojo para los elementos <p> en posiciones impares */
+/* Fondo alternado para listas */
 #verificados p:nth-child(odd),
 #noVerificados p:nth-child(odd) {
-    background-color: #b6d7fc88; 
+    background-color: #b6d7fc88; /* Fondo azul claro */
 }
 
-/* Sin fondo para los elementos <p> en posiciones pares */
 #verificados p:nth-child(even),
 #noVerificados p:nth-child(even) {
     background-color: transparent;
 }
 
+/* Espaciado en cada elemento de la lista */
 p {
     padding: 1vh; /* Espaciado interno */
+    margin: 0; /* Sin márgenes adicionales */
+    display: flex; /* Alinear texto y controles */
+    justify-content: space-between; /* Separar texto y checkbox o controles */
+    align-items: center; /* Centrar elementos verticalmente */
 }
+
+/* Checkbox */
 input[type="checkbox"] {
+    width: 2vh;
+    height: 2vh;
+    margin-right: 2vh;
+}
+
+/* Botón Confirmar */
+button {
+    width: 30vh; /* Ancho del botón */
+    height: 6vh; /* Altura del botón */
+    background-color: #5ba4f7e5; /* Azul claro */
+    color: black; /* Texto negro */
+    border: none; /* Sin borde */
+    cursor: pointer; /* Cambiar cursor al pasar */
+    text-align: center; /* Centrar texto */
+    line-height: 6vh; /* Centrar verticalmente texto */
+    font-family: 'Times New Roman', Times, serif; /* Fuente elegante */
+    font-weight: bold; /* Negrita */
+    font-size: 20px; /* Tamaño del texto */
+    margin-top: 2vh;
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+button:hover {
+    background-color: #4498f8; /* Azul más oscuro al pasar */
+}
+
+p input {
     width: 2vh; /* Ajusta el ancho según sea necesario */
     height: 2vh; /* Ajusta la altura según sea necesario */
     margin-right: 4vh;

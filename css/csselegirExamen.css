@@ -11,8 +11,8 @@ body {
     background-size: 95vh; /* Cubrir toda el área */
     background-repeat: no-repeat; /* No repetir la imagen de fondo */
     background-position: center; /* Centrar la imagen de fondo */
-    background-color: rgba(255, 255, 255, 0.267); /* Color de fondo con opacidad */
-    background-blend-mode: overlay; /* Mezclar el color de fondo con la imagen */
+    background-color:#d3d3d360 ; /* Color de fondo con opacidad */
+    background-blend-mode: multiply; 
 }
 
 header {

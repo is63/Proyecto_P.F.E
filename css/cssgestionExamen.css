@@ -57,59 +57,93 @@ main {
     background-color: #7ab8ffe3;
 }
 
-
-#gestion p:nth-child(even) {
+#gestion details:nth-child(even) {
     background-color: #b6d7fcd2; 
+    border-top: 1px solid black;
 }
 
-/* Sin fondo para los elementos <p> en posiciones pares */
-#gestion p:nth-child(odd) {
+#gestion details:nth-child(odd) {
     background-color: transparent;
+    border-top: 1px solid black;
+}
+#gestion details:last-of-type {
+    border-bottom: 1px solid black;
 }
 
-p {
-    display: flex; /* Flexbox para organizar texto y botones */
-    justify-content: space-between; /* Espacio entre texto y botones */
-    align-items: center; /* Centrar contenido verticalmente */
-    padding: 1vh; /* Espaciado interno */
-    margin: 0; /* Eliminar márgenes adicionales */
+summary {
+    display: flex;
+    justify-content: space-between;
+    padding: 1vh;
 }
 
-
-p .botones {
-    display: flex; /* Flexbox para alinear botones juntos */
-    gap: 1vh; /* Espaciado entre botones */
+details {
+    margin-bottom: 1vh; /* Espaciado entre cada examen */
+    padding: 1vh; /* Espaciado interno para el contenido */
+    background-color: #f9f9f9; /* Fondo claro */
+    border: 1px solid #ccc; /* Borde gris */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
 
+details summary {
+    font-size: 18px; /* Texto más grande */
+    font-weight: bold; /* Negrita */
+    cursor: pointer; /* Cambiar cursor al pasar */
+}
 
-p button {
-    background-color: #5ba4f7e5; /* Fondo del botón */
-    color: white; /* Color del texto */
+details p {
+    margin: 1vh 0; /* Espaciado vertical */
+    font-size: 16px; /* Tamaño de texto moderado */
+    color: #333; /* Texto oscuro */
+}
+
+/* Alinear los botones */
+details div {
+    display: flex; /* Flexbox para alinear los botones */
+    justify-content: flex-end; /* Alinear botones a la derecha */
+    gap: 1vh; /* Separación entre botones */
+}
+
+details button {
+    margin: 0.5vh; /* Espaciado entre botones */
+    padding: 0.5vh 1vh; /* Relleno interno */
     border: none; /* Sin borde */
-    padding: 0.5vh 1vh; /* Espaciado interno */
-    font-size: 14px; /* Tamaño del texto */
-    cursor: pointer; /* Cambiar cursor al pasar sobre el botón */
     border-radius: 5px; /* Bordes redondeados */
-    font-family: Arial, sans-serif; /* Fuente estándar */
+    font-size: 14px; /* Tamaño del texto */
+    font-weight: bold; /* Negrita para texto */
+    color: white; /* Texto blanco */
+    cursor: pointer; /* Cambiar cursor al pasar */
     transition: background-color 0.3s ease; /* Transición suave */
 }
 
+/* Botón Intentar */
+details button.intentar {
+    background-color: #4CAF50; /* Verde para Intentar */
+}
+
+details button.intentar:hover {
+    background-color: #45a049; /* Verde oscuro al pasar el ratón */
+}
+
+/* Botón Editar */
 .editar {
-    background-color: #4CAF50; /* Verde para "Editar" */
+    background-color: #FFC107; /* Amarillo para Editar */
+    color: black; /* Texto negro */
 }
 
 .editar:hover {
-    background-color: #45a049; /* Verde más oscuro al pasar el mouse */
+    background-color: #FFB300; /* Amarillo más oscuro al pasar */
 }
 
-.borrar {
-    background-color: #f44336; /* Rojo para "Borrar" */
+
+/* Botón Borrar */
+details button.borrar {
+    background-color: #f44336; /* Rojo para Borrar */
 }
 
-.borrar:hover {
-    background-color: #d32f2f; /* Rojo más oscuro al pasar el mouse */
+details button.borrar:hover {
+    background-color: #d32f2f; /* Rojo oscuro al pasar el ratón */
 }
-
 
 .footer-content, header {
     height: 6vh; /* Altura de los encabezados y pies de página */
@@ -131,24 +165,22 @@ p button {
     font-weight: bolder; /*Estilo o Tamaño del texto*/
 }
 
-
-
+/* Botón Crear Examen */
 #crearPregunta {
-    width: 30vh; /* Ancho de cada botón */
-    height: 6vh; /* Altura de cada botón */
-    background-color: #5ba4f7e5; /* Color de fondo de los botones */
-    color: black; /* Color del texto de los botones */
+    width: 30vh; /* Ancho del botón */
+    height: 6vh; /* Altura del botón */
+    background-color: #2196F3; /* Azul para Crear Examen */
+    color: white; /* Texto blanco */
     border: none; /* Sin borde */
-    cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
-    text-align: center; /* Centrar texto dentro del botón */
-    line-height: 40px; /* Centrar verticalmente el texto del botón */
-    font-family: 'Times New Roman', Times, serif; /* Tipo de letra */
+    border-radius: 10px; /* Bordes redondeados */
+    font-family: 'Arial', sans-serif; /* Fuente */
+    font-size: 18px; /* Tamaño del texto */
     font-weight: bold; /* Negrita */
-    font-size: 20px; /* Tamaño de fuente del texto del botón */
-    margin-top: 2vh;
-    border-radius: 10px;
+    cursor: pointer; /* Cambiar cursor al pasar */
+    margin-top: 2vh; /* Espaciado superior */
+    transition: background-color 0.3s ease; /* Transición suave */
 }
 
-#crearPregunta:hover{
-background-color: #4498f8;
+#crearPregunta:hover {
+    background-color: #1E88E5; /* Azul más oscuro al pasar */
 }
