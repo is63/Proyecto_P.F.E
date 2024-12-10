@@ -19,7 +19,7 @@ header {
     align-items: center; /* Centrar verticalmente los elementos */
 }
 
-.header-content {
+.headerDiv {
     display: flex; /* Usar flexbox para el contenido del encabezado */
     align-items: center; /* Centrar verticalmente los elementos */
     justify-content: space-between; 
@@ -27,7 +27,7 @@ header {
     padding: 2vh; /* Espaciado horizontal dentro del header */
 }
 
-.header-content img {
+.headerDiv img {
     height: 5vh; /* Ajustar la altura de la imagen */
 }
 
@@ -129,26 +129,33 @@ p input {
 }
 
 
-.footer-content, header {
+.footerDiv, header {
     height: 6vh; /* Altura de los encabezados y pies de página */
     background-color: #60a8fade; /* Color de fondo con opacidad */
     text-align: center; /* Centrar el texto horizontalmente */
     line-height: 5.5vh; /* Altura de línea para centrar el texto verticalmente */
 }
 
-.footer-content {
+.footerDiv {
     display: flex; /* Usar flexbox para el contenido del pie de página */
     justify-content: space-between; /* Espacio entre los elementos */
     align-items: center; /* Centrar verticalmente los elementos */
     width: 100%; /* Ancho completo del footer */
 }
 
-.footer-content a{
+.footerDiv a{
     text-decoration: none; /*Decoraciones del texto*/
     color:white; /*Color del texto*/
     font-weight: bolder; /*Estilo o Tamaño del texto*/
 }
 
+.footerDiv a:hover{
+    cursor: pointer;
+}
+
+.footerDiv a:last-of-type{
+    margin-right: 2vh;
+}
 
 #contenedor {
     display: flex; /* Usar flexbox para la disposición de los botones */

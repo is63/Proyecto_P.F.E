@@ -18,7 +18,7 @@ header {
     align-items: center; /* Centrar verticalmente los elementos */
 }
 
-.header-content {
+.headerDiv {
     display: flex; /* Usar flexbox para el contenido del encabezado */
     align-items: center; /* Centrar verticalmente los elementos */
     justify-content: space-between; 
@@ -26,7 +26,7 @@ header {
     padding: 2vh; /* Espaciado horizontal dentro del header */
 }
 
-.header-content img {
+.headerDiv img {
     height: 5vh; /* Ajustar la altura de la imagen */
 }
 
@@ -41,7 +41,7 @@ main {
     padding-top: 8vh; /* Espacio superior para evitar que el contenido se superponga al header */
 }
 
-.footer-content {
+.footerDiv {
     display: flex; /* Usar flexbox para el contenido del pie de página */
     justify-content: space-between; /* Centrar horizontalmente los elementos */
     align-items: center; /* Centrar verticalmente los elementos */
@@ -50,11 +50,18 @@ main {
     background-color: #419affde; /* Color de fondo */
 }
 
-.footer-content a {
+.footerDiv a {
     text-decoration: none; /* Sin decoraciones del texto */
     color: white; /* Color del texto */
     font-weight: bolder; /* Estilo o tamaño del texto */
     margin: 0 1vh; /* Espacio entre los enlaces */
+}
+.footerDiv a:hover{
+    cursor: pointer;
+}
+
+.footerDiv a:last-of-type{
+    margin-right: 2vh;
 }
 
 #contenedor {
