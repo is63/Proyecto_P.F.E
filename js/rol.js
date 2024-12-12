@@ -50,6 +50,8 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 
     botonAdmin.addEventListener("click", function () {
+        rol = "Admin";
+        localStorage.setItem("rolSesion", `${rol}`)
         window.location.href = "acciones.html";
     });
 
