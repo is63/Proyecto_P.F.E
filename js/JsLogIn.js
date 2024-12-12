@@ -44,13 +44,6 @@ window.addEventListener("DOMContentLoaded", () => {
         usuarioProfesor.validar();
         usuarios.push(usuarioProfesor);
     }
-    //console.log(usuarios);
-
-
-    //Muestro todos los usuarios del array
-    //usuarios.map(usuario => console.log(usuario));
-    //console.log(usuarios);
-
 
     //Creo un elemento "<p>" para mostrar el mensaje de error de inicio de sesion
     let mensaje = document.createElement("p");
@@ -191,27 +184,38 @@ window.addEventListener("DOMContentLoaded", () => {
             return false;
         }
 
+        //Guarda el valor decuelto en la funcion (true | false)
         let contrasenaValida = comprobar();
 
+        //Si la contraseña no es valida, lo muestro en un mensaje debajo del titulo
         if (!contrasenaValida) {
             mensajeRegistro.textContent = "Contraseña invalida";
+
+            //Le doy formato al mensaje
             mensajeRegistro.style.color = "red";
             mensajeRegistro.style.fontWeight = "bold";
             mensajeRegistro.style.margin = "1.5vh";
             mensajeRegistro.style.textAlign = "center";
             return;
         }
+        //Si la contraseña si es valida, meto el usuario nuevo en el array, borro los valores de los inputs
+        //y muestro un mensaje de espera porque no es un usuario Validado
         else {
 
+            //Creo el usuario nuevo con la informacion introducida
             let nuevoUsuario = new Usuario(email, contrasena, rol);
-            usuarios.push(nuevoUsuario);
-            //console.log(usuarios);
 
+            //Lo introduzco en el array de usuarios
+            usuarios.push(nuevoUsuario);
+
+            //Borror los valores de los inputs
             emailRegistrar.value = "";
             contrasenaRegistrar.value = "";
 
+            //Creo un localStorage con el array de usuarios
             localStorage.setItem("usuarios", JSON.stringify(usuarios));
 
+            //muestro el mensaje de espera y le doy formato
             mensajeRegistro.textContent = "Espere a ser validado";
             mensajeRegistro.style.color = "green";
             mensajeRegistro.style.fontWeight = "bold";
