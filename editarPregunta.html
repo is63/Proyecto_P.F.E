@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/cssEditarPregunta.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+    <script src="js/editarPregunta.js"></script>
     <title>Editar Preguntas</title>
 </head>
 
@@ -13,23 +14,24 @@
     <header>
         <div class="headerDiv">
             <img src="imagenes/gatoConduciendo.png" alt="Logo">
-            <h2>Editar Preguntas</h2>
-            <p></p>
+            <h2>Crear Preguntas</h2>
+            <h2 id="rol">Rol: </h2>
         </div>
     </header>
     <main>
         <div id="editarPreguntas">
-            <h1>Editar Pregunta</h1>
+            <h1>Editar/Crear Pregunta</h1>
+            
             <form id="formEditarPregunta">
                 <h2>Pregunta</h2>
-                <textarea placeholder="Escribe aquí la pregunta" ></textarea>
+                <textarea placeholder="Escribe aquí la pregunta" id="pregunta"></textarea>
                 <div class="respuestas">
                     <div class="respuesta">
                         <label for="respuesta1">Respuesta 1:</label>
                         <input type="text" id="respuesta1" placeholder="Escribe la respuesta 1" >
                         <div class="correcto">
                             <span>¿Correcta?</span>
-                            <input type="radio" name="correct-answer" value="1" title="Respuesta correcta" >
+                            <input type="radio" name="respuestaCorrecta" value="1" title="Respuesta correcta">
                         </div>
                     </div>
                     <div class="respuesta">
@@ -37,7 +39,7 @@
                         <input type="text" id="respuesta2" placeholder="Escribe la respuesta 2" >
                         <div class="correcto">
                             <span>¿Correcta?</span>
-                            <input type="radio" name="correct-answer" value="2" title="Respuesta correcta">
+                            <input type="radio" name="respuestaCorrecta" value="2" title="Respuesta correcta">
                         </div>
                     </div>
                     <div class="respuesta">
@@ -45,20 +47,20 @@
                         <input type="text" id="respuesta3" placeholder="Escribe la respuesta 3" >
                         <div class="correcto">
                             <span>¿Correcta?</span>
-                            <input type="radio" name="correct-answer" value="3" title="Respuesta correcta">
+                            <input type="radio" name="respuestaCorrecta" value="3" title="Respuesta correcta">
                         </div>
                     </div>
                 </div>
-                <button type="submit" class="save-button">Guardar Pregunta</button>
-                <button type="button" class="cancel-button">Cancelar</button>
+                <button id="botonGuardar">Guardar</button>
+                <button id="botonCancelar">Cancelar</button>
             </form>
         </div>
     </main>
     <footer>
         <div class="footerDiv">
-            <h2><a><i class="material-icons">chevron_left</i>volver</a></h2>
+            <h2><a id="botonVolver"><i class="material-icons">chevron_left</i>volver</a></h2>
             <h2>Autoescuela Proyecto</h2>
-            <h2><a>Salir<i class="material-icons">power_settings_new</i></a></h2>
+            <h2><a id="botonSalir">Salir<i class="material-icons">power_settings_new</i></a></h2>
         </div>
     </footer>
 </body>

@@ -13,7 +13,6 @@ window.addEventListener("DOMContentLoaded", function () {
 
     //Recupero el rol seleccionado en la página anterior
     let rol = this.localStorage.getItem("rolSesion");
-    //console.log(rol);
 
     //si esta vacio o no existe, hago una redireccion al index para que inicie Sesion
     if (rol == "" || rol == undefined) {

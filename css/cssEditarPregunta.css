@@ -122,19 +122,19 @@ button {
     transition: background-color 0.3s ease;
 }
 
-.save-button {
+#botonGuardar {
     background-color: #4CAF50;
 }
 
-.save-button:hover {
+#botonGuardar:hover {
     background-color: #45a049;
 }
 
-.cancel-button {
+#botonCancelar {
     background-color: #f44336;
 }
 
-.cancel-button:hover {
+#botonCancelar:hover {
     background-color: #d32f2f;
 }
 
