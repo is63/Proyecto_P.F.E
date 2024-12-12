@@ -66,6 +66,7 @@ form input:last-of-type:hover {
 }
 form input:focus {
     background-color: #a4daf183;
+    
 }
 form input:last-of-type:focus {
     background-color: #0a5879;

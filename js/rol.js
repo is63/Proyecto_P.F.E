@@ -5,37 +5,23 @@ window.addEventListener("DOMContentLoaded", () => {
     let botonProfesor = document.getElementById("profesor");
     let botonAdmin = document.getElementById("admin");
 
+    let botonVolver = document.getElementById("botonVolver");
+    let botonSalir = document.getElementById("botonSalir");
+
     let mostrarRol = document.getElementById("rol");
 
     let usuarioSesion = (localStorage.getItem("usuarioSesion"));
+    let rol;
 
     if (usuarioSesion == "" || usuarioSesion == undefined) {
         window.location.href = "index.html";
     }
-
-    usuarioSesion = usuarioSesion.split(" ");
-
-    //Uso slice porque me añade al final una barra o unas comillas igual que en el valor de usuario[0]
-
-    //Informacion del usuario con la sesion iniciada
-    let usuario;
-    //Hago esta comprobacion por si el usuario vuelve de la pagina siguiente que se mantenga la información
-    //Como en el index se pasa con "" al principio y al final compruebo que no esten 
-    if (usuarioSesion[0][0] == '"') {
-        usuario = usuarioSesion[0].slice(1);
-    }
-    else {
-        usuario = usuarioSesion[0];
-    }
-
-    let contrasena = usuarioSesion[1];
-    let rol;
-    
-    if (usuarioSesion[2][usuarioSesion[2].length-1] == '"') {
-        rol = usuarioSesion[2].slice(0, -1);
-    }
-    else{
-        rol = usuarioSesion[2];
+  
+    let usuarios = JSON.parse(localStorage.getItem("usuarios"));
+    for(let i = 0; i < usuarios.length; i++){
+      if(usuarios[i].nombre == usuarioSesion){
+        rol = usuarios[i].rol;
+      }
     }
 
 
@@ -69,12 +55,24 @@ window.addEventListener("DOMContentLoaded", () => {
 
     botonProfesor.addEventListener("click", function () {
         rol = "Profesor";
-        localStorage.setItem("usuarioSesion", `${usuario} ${contrasena} ${rol}`)
-        window.location.href = "acciones.html"
+        localStorage.setItem("rolSesion", `${rol}`)
+        window.location.href = "acciones.html";
     });
 
+    botonAlumno.addEventListener("click", function(){
+        rol = "Alumno";
+        localStorage.setItem("rolSesion", `${rol}`);
+        window.location.href = "acciones.html";
+    });
 
+    botonVolver.addEventListener("click", () =>{
+        window.location.href = "index.html";
+    });
 
+    botonSalir.addEventListener("click", function(){
+        alert();
+        window.location.href = "index.html";
 
+    });
 
 });

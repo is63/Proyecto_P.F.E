@@ -48,7 +48,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
     //Muestro todos los usuarios del array
-    usuarios.map(usuario => console.log(usuario));
+    //usuarios.map(usuario => console.log(usuario));
     //console.log(usuarios);
 
 
@@ -85,6 +85,10 @@ window.addEventListener("DOMContentLoaded", () => {
         let email = emailLogIn.value;
         let contrasena = contrasenaLogIn.value;
 
+        let us = localStorage.getItem("usuarios");
+        if(us == null){
+            localStorage.setItem("usuarios", JSON.stringify(usuarios));
+        }
 
         comprobarUsuario(email, contrasena);
 
@@ -201,7 +205,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
             let nuevoUsuario = new Usuario(email, contrasena, rol);
             usuarios.push(nuevoUsuario);
-            console.log(usuarios);
+            //console.log(usuarios);
 
             emailRegistrar.value = "";
             contrasenaRegistrar.value = "";
@@ -227,8 +231,7 @@ window.addEventListener("DOMContentLoaded", () => {
             if (usuarios[i].validado) {
                 if (email == usuarios[i].nombre && contrasena == usuarios[i].contrasena) {
                     //Guardo el usuario ue ha iniciado sesion para mostrar informacion y opciones en páginas siguientes
-                    let usuarioSesion = [email,contrasena, usuarios[i].rol]
-                    localStorage.setItem("usuarioSesion",JSON.stringify( `${email} ${contrasena} ${usuarios[i].rol}`));
+                    localStorage.setItem("usuarioSesion", `${email}`);
 
                     //contenido del mensaje
                     mensaje.textContent = "";

@@ -22,19 +22,19 @@
             <h1>Editar Examen</h1>
             <form id="form-editar">
                 <label for="nombre-examen">Nombre del Examen:</label>
-                <input type="text" id="nombre-examen" name="nombre-examen" value="Examen Actual" required>
+                <input type="text" id="nombre-examen" name="nombre-examen" value="Examen Actual" >
 
                 <label for="descripcion-examen">Descripción:</label>
-                <textarea id="descripcion-examen" name="descripcion-examen" rows="4" required>
+                <textarea id="descripcion-examen" name="descripcion-examen" rows="4" >
 Detalles actuales del examen
                 </textarea>
 
                 <label for="categoria">Categoría:</label>
-                <div id="categorias">
-                    <label><input type="radio" name="categoria" value="teorico" required> Teórico</label>
-                    <label><input type="radio" name="categoria" value="practico"> Práctico</label>
-                    <label><input type="radio" name="categoria" value="mixto"> Mixto</label>
-                </div>
+                <select id="categoria" name="categoria" >
+                    <option value="teorico">Teórico</option>
+                    <option value="practico">Práctico</option>
+                    <option value="mixto">Mixto</option>
+                </select>
 
                 <h2>Seleccionar preguntas</h2>
                 <div id="lista-preguntas">

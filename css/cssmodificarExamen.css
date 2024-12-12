@@ -124,6 +124,17 @@ form button {
     transition: background-color 0.3s ease;
 }
 
+form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: white;
+    color: #555;
+}
+
+
 #guardar-cambios {
     background-color: #4CAF50;
 }
