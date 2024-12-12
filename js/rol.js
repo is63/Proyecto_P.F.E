@@ -70,7 +70,6 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 
     botonSalir.addEventListener("click", function(){
-        alert();
         window.location.href = "index.html";
 
     });
