@@ -3,7 +3,8 @@ window.addEventListener("DOMContentLoaded", function () {
     let botonRealizarExamen = this.document.getElementById("realizarExamen");
     let botonCrearExamen = this.document.getElementById("crearExamen");
     let botonGestionUsuarios = this.document.getElementById("gestionar");
-    
+    let botonGestionCategorias = this.document.getElementById("gestionarCategorias");
+
     //Guardo los botones del Footer de Volver y Salir
     let botonVolver = document.getElementById("botonVolver");
     let botonSalir = document.getElementById("botonSalir");
@@ -26,6 +27,10 @@ window.addEventListener("DOMContentLoaded", function () {
         botonCrearExamen.style.display = "none";
         botonGestionUsuarios.style.display = "none";
 
+        //Le aumento  el tamaño a los botones restantes
+        let botones = this.document.querySelectorAll("button");
+        botones.forEach(boton => { boton.style.width = "30%" })
+
         //Redirección a la pagina de los examenes
         window.location.href = "GestionExamen.html";
 
@@ -34,10 +39,14 @@ window.addEventListener("DOMContentLoaded", function () {
 
     //si el rol es profesor oculto el boton de Gestionar Usuarios y creo un elemento para mostrar el rol en el Header
     if (rol == "Profesor") {
-        
+
         //Oculto el boton
         botonGestionUsuarios.style.display = "none";
-        
+
+        //Le aumento  el tamaño a los botones restantes
+        let botones = this.document.querySelectorAll("button");
+        botones.forEach(boton => { boton.style.width = "30%" })
+
         //Creo el elemento para mostrar el rol
         let mensajeRol = document.createElement("a");
         mensajeRol.style.color = "green";
@@ -57,20 +66,27 @@ window.addEventListener("DOMContentLoaded", function () {
     }
 
     //  Boton Realizar Examen  //
-    botonRealizarExamen.addEventListener("click", function(){
+    botonRealizarExamen.addEventListener("click", function () {
         //Redirecciona a la pagina para elegir que examen se va a realizar
         window.location.href = "GestionExamen.html";
     });
 
     //  Boton Elegir Examen  //
-    botonCrearExamen.addEventListener("click", function(){
+    botonCrearExamen.addEventListener("click", function () {
         //Redirecciona a la página para elegir si Crear Examen o Crear Preguntas
         window.location.href = "elegirExamen.html";
     });
 
-    botonGestionUsuarios.addEventListener("click", function(){
-        //Redirecciona a la página paara -gestionar Usuarios
+    //  Boton de Gestionar Usuarios  //
+    botonGestionUsuarios.addEventListener("click", function () {
+        //Redirecciona a la página para gestionar Usuarios
         window.location.href = "gestionUsuarios.html";
+    });
+
+    //  Boton de Gestionar Categorias  //
+    botonGestionCategorias.addEventListener("click",function(){
+        //Redirecciona a la página para gestionar las Categorias
+        window.location.href = "gestionarCategorias.html";
     });
 
     //  Boton de Volver del Footer  //

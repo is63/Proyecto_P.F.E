@@ -80,7 +80,7 @@ p {
 }
 
 button {
-    width: 25%; /* Ancho de cada botón */
+    width: 23%; /* Ancho de cada botón */
     height: 40vh; /* Altura de cada botón */
     background-color: #e5e5e5f1; /* Color de fondo de los botones */
     color: black; /* Color del texto de los botones */

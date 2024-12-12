@@ -24,8 +24,8 @@ window.addEventListener("DOMContentLoaded", () => {
     let contrasenaRegistrar = document.getElementById("contrasenaRegistrar");
     let rolRegistrar = document.getElementById("rolRegistrarse");
 
-    //Guardo el array de usuarios del LocalStorage
-
+    
+    //Recupero el array de usuarios del localStorage
     let usuarios = JSON.parse(localStorage.getItem("usuarios"));
     if (!usuarios) {  //Si no existe el array de usuarios los creo de nuevo
 

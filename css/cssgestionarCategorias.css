@@ -1,0 +1,185 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    position: flex; /* Fijar el header en la parte superior */
+    height: 6vh; /* Altura del encabezado */
+    background-color: #419affde; /* Color de fondo */
+    display: flex; /* Usar flexbox para el contenido del header */
+    justify-content: center; /* Centrar horizontalmente los elementos */
+    align-items: center; /* Centrar verticalmente los elementos */
+}
+
+.headerDiv {
+    display: flex; /* Usar flexbox para el contenido del encabezado */
+    align-items: center; /* Centrar verticalmente los elementos */
+    justify-content: space-between; 
+    width: 100%; /* Ancho completo para alinear correctamente */
+    padding: 2vh; /* Espaciado horizontal dentro del header */
+}
+
+.headerDiv img {
+    height: 5vh; /* Ajustar la altura de la imagen */
+}
+
+/* Main content */
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#gestionarCategorias {
+    width: 80%;
+    max-width: 600px;
+    height: 70vh; /* Altura predeterminada */
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; /* Para alinear correctamente los elementos internos */
+}
+
+#gestionarCategorias h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Lista de Categorías */
+#listaCategorias {
+    flex: 1; /* Permite que el contenedor de la lista tome el espacio sobrante */
+    overflow-y: auto; /* Habilitar el scroll si el contenido es demasiado grande */
+    margin-top: 15px;
+    text-align: left;
+    padding: 10px; /* Espaciado interno */
+    border: 1px solid #ccc; /* Borde para diferenciar el área */
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+#listaCategorias ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#listaCategorias ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #555;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+}
+
+#listaCategorias ul li #botonBorrar {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+#listaCategorias ul li #botonBorrar:hover {
+    background-color: #d32f2f;
+}
+
+/* Formulario para agregar categoría */
+#formAgregarCategoria {
+    margin-top: 20px;
+}
+
+#formAgregarCategoria label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+#formAgregarCategoria input {
+    width: calc(100% - 110px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+#formAgregarCategoria button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#formAgregarCategoria button:hover {
+    background-color: #45a049;
+}
+
+/* Footer */
+.footerDiv, header {
+    height: 6vh; /* Altura de los encabezados y pies de página */
+    background-color: #60a8fade; /* Color de fondo con opacidad */
+    text-align: center; /* Centrar el texto horizontalmente */
+    line-height: 5.5vh; /* Altura de línea para centrar el texto verticalmente */
+}
+
+.footerDiv {
+    display: flex; /* Usar flexbox para el contenido del pie de página */
+    justify-content: space-between; /* Espacio entre los elementos */
+    align-items: center; /* Centrar verticalmente los elementos */
+    width: 100%; /* Ancho completo del footer */
+}
+
+.footerDiv a {
+    text-decoration: none; /*Decoraciones del texto*/
+    color: white; /*Color del texto*/
+    font-weight: bolder; /*Estilo o Tamaño del texto*/
+}
+
+.footerDiv a:hover {
+    cursor: pointer;
+}
+
+.footerDiv a:last-of-type {
+    margin-right: 2vh;
+}
+
+/* Botón */
+button {
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    opacity: 0.9;
+}
