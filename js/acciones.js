@@ -74,7 +74,7 @@ window.addEventListener("DOMContentLoaded", function () {
         window.location.href = "gestionUsuarios.html";
     });
 
-    //  Boton de Volvel del Footer  //
+    //  Boton de Volver del Footer  //
     botonVolver.addEventListener("click", () => {
         //Redirecciona a la página anterior 
         window.location.href = "rol.html";
