@@ -8,126 +8,141 @@ window.addEventListener("DOMContentLoaded", function () {
     let mostrarValidados = this.document.getElementById("verificados");
     console.log(mostrarValidados);
 
+    //Guardo la ventada donde se ven los usuarios
+    let gestion = this.document.getElementById("gestion");
+
     let mostrarNoValidados = this.document.getElementById("noVerificados");
 
     //Consaigo el array de ususarios
     let usuarios = JSON.parse(localStorage.getItem("usuarios"));
+    console.log(usuarios);
 
+    //creo dos arrays uno para los usuarios validados y otro para los que no lo estan
     let validados = [];
     let noValidados = [];
 
 
+    //recorro el array de usuarios para encontrar a los usuarios que estan validados
     usuarios.forEach(usuario => {
+        //Si el usuario esta Validado : 
         if (usuario.validado) {
-            if(usuario.rol == "Admin"){
-                
-            }else{
-            let nuevoLista = this.document.createElement("p");
-            nuevoLista.textContent = `${usuario.nombre} |  rol: ${usuario.rol}`;
-            
-            let botonBorrar = this.document.createElement("input");
-            botonBorrar.setAttribute("type", "button");
-            botonBorrar.setAttribute("value", "borrar");
-            nuevoLista.appendChild(botonBorrar);
-            mostrarValidados.appendChild(nuevoLista);
+            //si el rol del usuario es admin no hago nada
+            if (usuario.rol == "Admin");
 
-            let botonCheckbox = this.document.createElement("input");
-            botonCheckbox.setAttribute("type", "checkbox");
-            botonCheckbox.setAttribute("checked", "checked");
-            nuevoLista.appendChild(botonCheckbox)
-            mostrarValidados.appendChild(nuevoLista);
+            else {
+                //Creo un elemento p nuevo donde muestro el nombre y el rol del usuario
+                let nuevoLista = this.document.createElement("p");
+                nuevoLista.textContent = `${usuario.nombre} |  rol: ${usuario.rol}`;
 
-            validados.push(usuario);
-            console.log(usuario);
+                //Creo el boton de borrar y lo añado a la lista
+                let botonBorrar = this.document.createElement("input");
+                botonBorrar.setAttribute("type", "button");
+                botonBorrar.setAttribute("value", "borrar");
+                nuevoLista.appendChild(botonBorrar);
+                mostrarValidados.appendChild(nuevoLista);
+
+                //Creo el boton de Validar y lo añado a la lista
+                let botonCheckbox = this.document.createElement("input");
+                botonCheckbox.setAttribute("type", "checkbox");
+                botonCheckbox.setAttribute("checked", "checked");
+                nuevoLista.appendChild(botonCheckbox)
+                mostrarValidados.appendChild(nuevoLista);
+
+                //añado el usuario al array de usuarios Validados
+                validados.push(usuario);
             }
         }
+        //Si el usuario no esta Validado :
         else {
-
+            //Creo un elemento p donde muestro el nombre y usuario
             let nuevoLista = this.document.createElement("p");
             nuevoLista.textContent = `${usuario.nombre} |  rol: ${usuario.rol}`;
 
+            //Creo el boton de borrar y lo añado a la lista
             let botonBorrar = this.document.createElement("input");
             botonBorrar.setAttribute("type", "button");
             botonBorrar.setAttribute("value", "borrar");
             nuevoLista.appendChild(botonBorrar);
             mostrarValidados.appendChild(nuevoLista);
 
+            //Creo el boton de checkbox y lo añado a la lista
             let botonCheckbox = this.document.createElement("input");
             botonCheckbox.setAttribute("type", "checkbox");
             nuevoLista.appendChild(botonCheckbox)
             mostrarNoValidados.appendChild(nuevoLista);
 
-
+            //Añado el usuario al array de No Validados
             noValidados.push(usuario);
+
             console.log(usuario);
 
         }
     });
 
-    let gestion = this.document.getElementById("gestion");
-
-    gestion.addEventListener("click",function(event){
-        if(event.target.matches("input[type='button']")){
-            
+    //Creo un listener de toda la ventana donde se ven los usuarios 
+    //para darle funcionalidad a los botones de borrar
+    gestion.addEventListener("click", function (event) {
+        //Si el elemento al que se le ha hecho click es el boton de borrar
+        if (event.target.matches("input[type='button']")) {
+            //Selecciono el elemnto p padre
             let p = event.target.closest("p");
-
-            if(p){
-                let nombreP = p.textContent.split(" ")[0] ;
-                if(confirm("seguro que quiere borrar a " + nombreP))
-                p.remove();
-            }
-        }
-    });
-
-        gestion.addEventListener("click",function(event){
-        if(event.target.matches("input[type='checkbox']")){
-            
-            let p = event.target.closest("p");
-
-            if(p){
-                let nombreP = p.textContent.split(" ")[0] ;
-                console.log(nombreP);
-                usuarios.forEach(usuario => {
-                    if(nombreP == usuario.nombre){
-                        console.log(nombreP + " Coincide");
-                        alert(usuario.validado);
-                        if((usuario.validado)){
-                            usuario.validado = false;
-                            alert(usuario.validado);
-                            //Guardar en localStorage anes de refrescar
-                            //window.location.reload();
-                        }
-                        else if(!(usuario.validado)){
-                            usuario.validado = true;
-                            alert(usuario.validado);
-                            //Guardar en localStorage anes de refrescar
-                            //window.location.reload();
-                        }
+            //Si el elemento p no es nulo 
+            if (p) {
+                //Guardo el nombre del usuario escrito en la lista
+                let nombreP = p.textContent.split(" ")[0];
+                //Muestro un mensaje de cofirmacion donde muestro el nombre del usuario a eliminar
+                if (confirm("seguro que quiere borrar a " + nombreP)) {
+                    //Elimino el elemento p
+                    p.remove();
+                    //consigo el index del usuario
+                    let indexUsuario = usuarios.findIndex(usuario => usuario.nombre == nombreP);
+                    //Si el index existe borro el usuario del array
+                    if (indexUsuario != -1) {
+                        //borro el usuario
+                        usuarios.splice(indexUsuario, 1);
+                        /**
+                         * Falta guardarlo en el localStorage
+                         * 
+                         * 
+                         */
+                        console.log(usuarios);
                     }
-                    
-                });
-                
-            }
-        }
-    });
-
-    // Evento para borrar Categorias  //
-    /*lista.addEventListener("click", function (event) {
-        //Si el evento se produce desde el boton borrar coge su li
-        if (event.target.matches("#botonBorrar")) {
-            //selecciono el elemento li que contiene el boton
-            let li = event.target.closest("li");
-            //Si no es null o undefined borro el li
-            if (li) {
-                //cojo el texto dentro del li y borro el del boton
-                let nombreCategoria = li.textContent.replace("Borrar", "");
-                //Muestro un mensaje de confirmacion con un mensaje concatenando el texto de la categoria
-                if (confirm(`¿Está seguro de que desea eliminar la categoría "${nombreCategoria}"?`)) {
-                    li.remove();
+                }
+                else {
+                    alert("El usuario " + nombreP + " no existe");
                 }
             }
         }
-    });*/
+    });
+
+    //Funcionalida de Validar
+    gestion.addEventListener("click", function (event) {
+        if (event.target.matches("input[type='checkbox']")) {
+
+            let p = event.target.closest("p");
+
+            if (p) {
+                let nombreP = p.textContent.split(" ")[0];
+                console.log(nombreP);
+                usuarios.forEach(usuario => {
+                    if (nombreP == usuario.nombre) {
+                        console.log(nombreP + " Coincide");
+                        alert(usuario.validado);
+                        if ((usuario.validado)) {
+                            usuario.validado = false;
+                        }
+                        else if (!(usuario.validado)) {
+                            usuario.validado = true;
+                        }
+                    }
+
+                });
+                localStorage.setItem("usuarios", JSON.stringify(usuarios));
+                window.location.reload();
+            }
+        }
+    });
+
     console.log(validados);
     console.log(noValidados);
 
