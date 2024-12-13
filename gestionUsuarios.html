@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/cssgestionUsuarios.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
-
+    <script src="js/claseUsuario.js"></script>
+    <script src="js/gestionUsuarios.js"></script>
     <title>Gestionar usuarios</title>
 </head>
 
@@ -23,18 +24,21 @@
             <section id="verificados">
                 <div>
                     <h1>Usuarios Verificados</h1>
+                    <h1>Borrar</h1>
+                    <h1>Validados</h1>
                 </div>
-                <p>Aqui va otro usuario</p>
+                <p>Aqui va otro usuario <input type="button" ><input type="checkbox"></p> 
             </section>
             <section id="noVerificados">
                 <div>
                     <h1>Usuarios No Verificados</h1>
+                    <h1>Borrar</h1>
                     <h1>Validar</h1>
                 </div>
-                <p>Aqui va otro usuario <input type="checkbox"></p>               
+                <p>Aqui va otro usuario <input type="button" value="borrar" ><input type="checkbox"></p>               
             </section>
         </div>
-        <button>Confirmar</button>
+        <button id="confirmar">Confirmar</button>
     </main>
     <div class="footerDiv">
         <h2><a id="botonVolver"><i class="material-icons">chevron_left</i>volver</a></h2>

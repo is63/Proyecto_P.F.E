@@ -20,6 +20,9 @@ Validado: ${this.validado}`;
     validar() {
         this.validado = true;
     }
+    noValidar() {
+        this.validado = false;
+    }
 }
 
 

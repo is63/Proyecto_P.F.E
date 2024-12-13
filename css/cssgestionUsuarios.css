@@ -63,6 +63,17 @@ main {
     border-bottom: none;
 }
 
+/* Espacio a la izquierda del titulo Borrar*/
+#noVerificados div h1:nth-child(2){
+    margin-left: 40.3%;
+    
+}
+/* Espacio a la izquierda del titulo Borrar*/
+#verificados div h1:nth-child(2){
+    margin-left: 46%;
+    
+}
+
 /* Encabezados de las secciones */
 section div {
     display: flex;
@@ -94,6 +105,12 @@ p {
     align-items: center; /* Centrar elementos verticalmente */
 }
 
+p input {
+    width: 2vh; /* Ajusta el ancho según sea necesario */
+    height: 2vh; /* Ajusta la altura según sea necesario */
+    margin-right: 4vh;
+}
+
 /* Checkbox */
 input[type="checkbox"] {
     width: 2vh;
@@ -101,8 +118,16 @@ input[type="checkbox"] {
     margin-right: 2vh;
 }
 
+input[type="button"]{
+    width: 7vh;
+    height: 2vh;
+    background-color: rgba(255, 0, 0, 0.822);
+    border-color: red;
+    margin-left: 50%;
+}
+
 /* Botón Confirmar */
-button {
+#confirmar {
     width: 30vh; /* Ancho del botón */
     height: 6vh; /* Altura del botón */
     background-color: #5ba4f7e5; /* Azul claro */
@@ -122,11 +147,7 @@ button:hover {
     background-color: #4498f8; /* Azul más oscuro al pasar */
 }
 
-p input {
-    width: 2vh; /* Ajusta el ancho según sea necesario */
-    height: 2vh; /* Ajusta la altura según sea necesario */
-    margin-right: 4vh;
-}
+
 
 
 .footerDiv, header {
