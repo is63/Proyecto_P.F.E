@@ -43,6 +43,9 @@ window.addEventListener("DOMContentLoaded", () => {
         let usuarioProfesor = new Usuario("Sergio", "Bonache" , "Profesor");
         usuarioProfesor.validar();
         usuarios.push(usuarioProfesor);
+
+        let usuarioNovalido = new Usuario("Raul", "Rodriguez" , "Alumno");
+        usuarios.push(usuarioNovalido);
     }
 
     //Creo un elemento "<p>" para mostrar el mensaje de error de inicio de sesion
