@@ -3,7 +3,7 @@ class Usuario {
         this.nombre = nombre;
         this.contrasena = contrasena;
         this.rol = rol;
-        this.validado = false
+        this.validado = false;
     }
 
     getInfo() {
@@ -24,10 +24,3 @@ Validado: ${this.validado}`;
         this.validado = false;
     }
 }
-
-
-//escribir
-//localStorage.setItem("usuarios", JSON.stringify(usuarios));
-
-//leer
-//console.log(JSON.parse(localStorage.getItem("usuarios")));
