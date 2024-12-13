@@ -50,7 +50,7 @@ window.addEventListener("DOMContentLoaded", function () {
         //  Boton de Volver del Footer  //
         botonVolver.addEventListener("click", () => {
             //Redirecciona a la página anterior 
-            window.location.href = "rol.html";
+            window.location.href = "acciones.html";
         });
     
         botonSalir.addEventListener("click", function () {

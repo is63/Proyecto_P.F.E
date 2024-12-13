@@ -14,7 +14,11 @@ window.addEventListener("DOMContentLoaded", function () {
 
 
     //Crear array de preguntas que no se borre como en el index
-
+    let preguntas = [];
+    if(localStorage.getItem("preguntas")){
+        preguntas = localStorage.getItem("preguntas");
+        
+    }
 
     //guardo el titulo para mostrar mas adelante el mensaje de error abajo suyo
     let titulopreguntas = this.document.getElementById("editarPreguntas").firstElementChild;
@@ -131,7 +135,7 @@ window.addEventListener("DOMContentLoaded", function () {
         }
 
         //Si los campos anteriores estan completos, dejo el mensaje de error en blanco para eliminarlo de la vista 
-        if (!(respuesta1 = "" || respuesta2 == "" || respuesta3 == "")) {
+        if (!(respuesta1 == "" || respuesta2 == "" || respuesta3 == "")) {
             mensajeErrorRespuestas.textContent = "";
         } if (!(valorCorrecto == undefined || valorCorrecto == "" || valorCorrecto == null)) {
             mensajeErroCorrecta.textContent = "";
@@ -143,14 +147,19 @@ window.addEventListener("DOMContentLoaded", function () {
         //Si algunos hay algun error detengo la ejecucion de la página
         if (
             (valorCorrecto == undefined || valorCorrecto == "" || valorCorrecto == null)
-            && (respuesta1 == "" || respuesta2 == "" || respuesta3 == "")
-            && (pregunta == "")
+            || (respuesta1 == "" || respuesta2 == "" || respuesta3 == "")
+            || (pregunta == "")
         ) {
+            alert("deberia detenerse la ejecuccion del programa");
             return;
         }
         
         else{
-            localStorage.setItem("pregunta", `${pregunta} ${respuesta1} ${respuesta2} ${respuesta3} ${valorCorrecto}`)
+            let preguntaCompleta = `${pregunta} | ${respuesta1} | ${respuesta2} | ${respuesta3} | ${valorCorrecto}`;
+            preguntas.push(preguntaCompleta);
+
+            localStorage.setItem("preguntas", JSON.stringify(preguntas));
+            window.location.href = "elegirExamen.html";
         }
 
     });
