@@ -6,7 +6,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
     //Guardo los div donde voy a mostrar los usuarios
     let mostrarValidados = this.document.getElementById("verificados");
-    console.log(mostrarValidados);
+
 
     //Guardo la ventada donde se ven los usuarios
     let gestion = this.document.getElementById("gestion");
@@ -15,7 +15,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
     //Consaigo el array de ususarios
     let usuarios = JSON.parse(localStorage.getItem("usuarios"));
-    console.log(usuarios);
+
 
     //creo dos arrays uno para los usuarios validados y otro para los que no lo estan
     let validados = [];
@@ -74,7 +74,7 @@ window.addEventListener("DOMContentLoaded", function () {
             //Añado el usuario al array de No Validados
             noValidados.push(usuario);
 
-            console.log(usuario);
+
 
         }
     });
@@ -100,12 +100,9 @@ window.addEventListener("DOMContentLoaded", function () {
                     if (indexUsuario != -1) {
                         //borro el usuario
                         usuarios.splice(indexUsuario, 1);
-                        /**
-                         * Falta guardarlo en el localStorage
-                         * 
-                         * 
-                         */
-                        console.log(usuarios);
+                        localStorage.setItem("usuarios", JSON.stringify(usuarios));
+                        window.location.reload();
+                       
                     }
                 }
                 else {
@@ -123,10 +120,10 @@ window.addEventListener("DOMContentLoaded", function () {
 
             if (p) {
                 let nombreP = p.textContent.split(" ")[0];
-                console.log(nombreP);
+
                 usuarios.forEach(usuario => {
                     if (nombreP == usuario.nombre) {
-                        console.log(nombreP + " Coincide");
+
                         alert(usuario.validado);
                         if ((usuario.validado)) {
                             usuario.validado = false;
@@ -143,8 +140,6 @@ window.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    console.log(validados);
-    console.log(noValidados);
 
 
 
