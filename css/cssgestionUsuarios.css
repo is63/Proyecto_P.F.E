@@ -63,17 +63,6 @@ main {
     border-bottom: none;
 }
 
-/* Espacio a la izquierda del titulo Borrar*/
-#noVerificados div h1:nth-child(2){
-    margin-left: 40.3%;
-    
-}
-/* Espacio a la izquierda del titulo Borrar*/
-#verificados div h1:nth-child(2){
-    margin-left: 40.3%;
-    
-}
-
 /* Encabezados de las secciones */
 section div {
     display: flex;
@@ -123,32 +112,13 @@ input[type="button"]{
     height: 2vh;
     background-color: rgba(255, 0, 0, 0.822);
     border-color: red;
-    margin-left: 50%;
 }
 
-/* Botón Confirmar */
-#confirmar {
-    width: 30vh; /* Ancho del botón */
-    height: 6vh; /* Altura del botón */
-    background-color: #5ba4f7e5; /* Azul claro */
-    color: black; /* Texto negro */
-    border: none; /* Sin borde */
-    cursor: pointer; /* Cambiar cursor al pasar */
-    text-align: center; /* Centrar texto */
-    line-height: 6vh; /* Centrar verticalmente texto */
-    font-family: 'Times New Roman', Times, serif; /* Fuente elegante */
-    font-weight: bold; /* Negrita */
-    font-size: 20px; /* Tamaño del texto */
-    margin-top: 2vh;
-    border-radius: 10px; /* Bordes redondeados */
-}
+
 
 button:hover {
     background-color: #4498f8; /* Azul más oscuro al pasar */
 }
-
-
-
 
 .footerDiv, header {
     height: 6vh; /* Altura de los encabezados y pies de página */

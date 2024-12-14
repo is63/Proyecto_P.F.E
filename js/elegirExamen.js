@@ -3,6 +3,7 @@ window.addEventListener("DOMContentLoaded", function () {
     //Conseguir los botones de seleccion
     let botonCrearPregunta = this.document.getElementById("crearPreguntas");
     let botonCrearExamen = this.document.getElementById("crearExamen");
+    let botonGestionarPreguntas = this.document.getElementById("gestionarPreguntas");
 
     //Guardo los botones del Footer de Volver y Salir
     let botonVolver = document.getElementById("botonVolver");
@@ -40,6 +41,11 @@ window.addEventListener("DOMContentLoaded", function () {
         //  Boton de Crear Pregunta  //
         botonCrearPregunta.addEventListener("click", function(){
             window.location.href = "editarPregunta.html";
+        });
+
+        //  Boton de Gestionar Pregunta  //
+        botonGestionarPreguntas.addEventListener("click", () =>{
+            this.window.location.href = "gestionPreguntas.html";
         });
 
         //  Boton de Crear Examen  //

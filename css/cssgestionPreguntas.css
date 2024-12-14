@@ -1,3 +1,4 @@
+/* General */
 * {
     margin: 0; /* Eliminar márgenes predeterminados */
     padding: 0; /* Eliminar relleno predeterminado */
@@ -7,11 +8,10 @@ body {
     display: flex; /* Usar flexbox para la disposición */
     flex-direction: column; /* Apilar elementos verticalmente */
     height: 100vh; /* Altura de ventana */
-    background-color: #f0f0f0c7;
+    background-color: #f0f0f0c7; /* Fondo claro */
 }
 
 header {
-    position: flex; /* Fijar el header en la parte superior */
     height: 6vh; /* Altura del encabezado */
     background-color: #419affde; /* Color de fondo */
     display: flex; /* Usar flexbox para el contenido del header */
@@ -31,6 +31,7 @@ header {
     height: 5vh; /* Ajustar la altura de la imagen */
 }
 
+/* Main */
 main {
     flex: 1; /* Permitir que el main ocupe el espacio restante */
     display: flex; /* Usar flexbox para organizar el contenido */
@@ -39,17 +40,17 @@ main {
     justify-content: center; /* Centrar verticalmente */
 }
 
-#gestion{
+#gestion {
     display: flex;
     flex-direction: column;
     height: 70vh;
     width: 130vh;
     border: 3px solid black;
-    background-color:#b6d7fc88;
+    background-color: #b6d7fc88;
     box-shadow: 10px 10px 5px #aaaaaa;
 }
 
-#gestion section{
+#gestion section {
     display: flex;
     justify-content: space-between;
     text-align: center;
@@ -57,32 +58,41 @@ main {
     background-color: #7ab8ffe3;
 }
 
-
-#gestion p:nth-child(even) {
-    background-color: #b6d7fcd2; 
-}
-
-/* Sin fondo para los elementos <p> en posiciones pares */
-#gestion p:nth-child(odd) {
-    background-color: transparent;
-}
-
-p {
-    display: flex; /* Flexbox para organizar texto y botones */
-    justify-content: space-between; /* Espacio entre texto y botones */
-    align-items: center; /* Centrar contenido verticalmente */
+/* Estilo para los detalles y resumen */
+#preguntasContainer details {
+    border: 1px solid #ddd; /* Borde ligero */
+    border-radius: 5px; /* Bordes redondeados */
+    margin-bottom: 1vh; /* Espaciado entre detalles */
     padding: 1vh; /* Espaciado interno */
-    margin: 0; /* Eliminar márgenes adicionales */
+    background-color: #f5f5f5; /* Fondo claro */
+    cursor: pointer; /* Cambiar cursor al pasar sobre ellos */
+    transition: background-color 0.3s ease; /* Transición suave */
 }
 
-
-p .botones {
-    display: flex; /* Flexbox para alinear botones juntos */
-    gap: 1vh; /* Espaciado entre botones */
+#preguntasContainer details:hover {
+    background-color: #b4b4b46b; /* Fondo azul claro al pasar el mouse */
 }
 
+#preguntasContainer summary {
+    font-size: 1.2rem; /* Tamaño de letra */
+    font-weight: bold; /* Negrita */
+    color: rgb(44, 44, 44); /* Azul para el texto */
+    list-style: none; /* Sin viñetas */
+    cursor: pointer; /* Cambiar cursor al pasar */
+}
 
-p button {
+#preguntasContainer details .detalles {
+    margin-top: 1vh; /* Espaciado entre el título y contenido */
+}
+
+/* Botones dentro de detalles */
+#preguntasContainer .botones {
+    margin-top: 1vh; /* Espaciado entre texto y botones */
+    display: flex; /* Flex para botones */
+    gap: 1vh; /* Separación entre botones */
+}
+
+button {
     background-color: #5ba4f7e5; /* Fondo del botón */
     color: white; /* Color del texto */
     border: none; /* Sin borde */
@@ -110,35 +120,7 @@ p button {
     background-color: #d32f2f; /* Rojo más oscuro al pasar el mouse */
 }
 
-
-.footerDiv, header {
-    height: 6vh; /* Altura de los encabezados y pies de página */
-    background-color: #60a8fade; /* Color de fondo con opacidad */
-    text-align: center; /* Centrar el texto horizontalmente */
-    line-height: 5.5vh; /* Altura de línea para centrar el texto verticalmente */
-}
-
-.footerDiv {
-    display: flex; /* Usar flexbox para el contenido del pie de página */
-    justify-content: space-between; /* Espacio entre los elementos */
-    align-items: center; /* Centrar verticalmente los elementos */
-    width: 100%; /* Ancho completo del footer */
-}
-
-.footerDiv a{
-    text-decoration: none; /*Decoraciones del texto*/
-    color:white; /*Color del texto*/
-    font-weight: bolder; /*Estilo o Tamaño del texto*/
-}
-
-.footerDiv a:hover{
-    cursor: pointer;
-}
-
-.footerDiv a:last-of-type{
-    margin-right: 2vh;
-}
-
+/* Botón Crear Pregunta */
 #crearPregunta {
     width: 30vh; /* Ancho de cada botón */
     height: 6vh; /* Altura de cada botón */
@@ -155,6 +137,35 @@ p button {
     border-radius: 10px;
 }
 
-#crearPregunta:hover{
-background-color: #4498f8;
+#crearPregunta:hover {
+    background-color: #4498f8;
+}
+
+/* Footer */
+.footerDiv, header {
+    height: 6vh; /* Altura de los encabezados y pies de página */
+    background-color: #60a8fade; /* Color de fondo con opacidad */
+    text-align: center; /* Centrar el texto horizontalmente */
+    line-height: 5.5vh; /* Altura de línea para centrar el texto verticalmente */
+}
+
+.footerDiv {
+    display: flex; /* Usar flexbox para el contenido del pie de página */
+    justify-content: space-between; /* Espacio entre los elementos */
+    align-items: center; /* Centrar verticalmente los elementos */
+    width: 100%; /* Ancho completo del footer */
+}
+
+.footerDiv a {
+    text-decoration: none; /*Decoraciones del texto*/
+    color: white; /*Color del texto*/
+    font-weight: bolder; /*Estilo o Tamaño del texto*/
+}
+
+.footerDiv a:hover {
+    cursor: pointer;
+}
+
+.footerDiv a:last-of-type {
+    margin-right: 2vh;
 }

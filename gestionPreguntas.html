@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/cssgestionPreguntas.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+    <script src="js/gestionPreguntas.js"></script>
 
     <title>Gestionar Preguntas</title>
 </head>
@@ -23,35 +24,50 @@
             <section>
                 <p></p>
                 <h1>Preguntas</h1>
-                <p>ordenar<i class="material-icons">arrow_drop_down</i></p>
+                <h3>ordenar<i class="material-icons">arrow_drop_down</i></h3>
             </section>
-            <div>
-                <p id="1">Pregunta 1 
-                    <span class="botones">
-                        <button class="editar">Editar</button>
-                        <button class="borrar">Borrar</button>
-                    </span>
-                </p>
-                <p id="2">Pregunta 2 
-                    <span class="botones">
-                        <button class="editar">Editar</button>
-                        <button class="borrar">Borrar</button>
-                    </span>
-                </p>
-                <p id="3">Pregunta 3 
-                    <span class="botones">
-                        <button class="editar">Editar</button>
-                        <button class="borrar">Borrar</button>
-                    </span>
-                </p>
-                <p id="4">Pregunta 4 
-                    <span class="botones">
-                        <button class="editar">Editar</button>
-                        <button class="borrar">Borrar</button>
-                    </span>
-                </p>
+            <div id="preguntasContainer">
+                <details id="1">
+                    <summary>Pregunta 1</summary>
+                    <div class="detalles">
+                        <p>Detalles de la pregunta 1</p>
+                        <span class="botones">
+                            <button class="editar">Editar</button>
+                            <button class="borrar">Borrar</button>
+                        </span>
+                    </div>
+                </details>
+                <details id="2">
+                    <summary>Pregunta 2</summary>
+                    <div class="detalles">
+                        <p>Detalles de la pregunta 2</p>
+                        <span class="botones">
+                            <button class="editar">Editar</button>
+                            <button class="borrar">Borrar</button>
+                        </span>
+                    </div>
+                </details>
+                <details id="3">
+                    <summary>Pregunta 3</summary>
+                    <div class="detalles">
+                        <p>Detalles de la pregunta 3</p>
+                        <span class="botones">
+                            <button class="editar">Editar</button>
+                            <button class="borrar">Borrar</button>
+                        </span>
+                    </div>
+                </details>
+                <details id="4">
+                    <summary>Pregunta 4</summary>
+                    <div class="detalles">
+                        <p>Detalles de la pregunta 4</p>
+                        <span class="botones">
+                            <button class="editar">Editar</button>
+                            <button class="borrar">Borrar</button>
+                        </span>
+                    </div>
+                </details>
             </div>
-            
         </div>
         <button id="crearPregunta">Crear Pregunta</button>
     </main>

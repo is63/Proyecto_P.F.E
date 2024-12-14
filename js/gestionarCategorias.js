@@ -1,5 +1,9 @@
 window.addEventListener("DOMContentLoaded", function () {
 
+    //Selecciono los botones del footer de Volver, Salir
+    let botonVolver = document.getElementById("botonVolver");
+    let botonSalir = document.getElementById("botonSalir");
+
     //Guardo los botones
     let botonAgregar = document.getElementById("botonAgregar");
 
@@ -63,7 +67,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
             localStorage.setItem("categorias", JSON.stringify(categorias));
 
-            document.getElementById("nuevaCategoria").value = ''; 
+            document.getElementById("nuevaCategoria").value = '';
 
             //Si esta vacio muestro un mensaje de error
         } else {
@@ -95,10 +99,24 @@ window.addEventListener("DOMContentLoaded", function () {
 
                         li.remove();
 
-                        localStorage.setItem("categorias",JSON.stringify(categorias));
+                        localStorage.setItem("categorias", JSON.stringify(categorias));
                     }
                 }
             }
         }
     });
+
+        //  Boton de Volver del Footer  //
+        botonVolver.addEventListener("click", () =>{
+            //redirecciono a la página anterior
+            window.location.href = "acciones.html"; //no uso window.history.back(), por si viene de una pagina siguiente
+        });
+    
+        //  Boton de Salir del Footer  //
+        botonSalir.addEventListener("click", function(){
+            //redirecciono al index para que se reescriva el localStorage de ususarioSesion y vuelva a iniciar Sesion
+            window.location.href = "index.html";
+    
+        });
+
 });
