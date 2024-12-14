@@ -21,14 +21,28 @@
     <main>
         <div id="editarPreguntas">
             <h1>Editar/Crear Pregunta</h1>
-            
+    
             <form id="formEditarPregunta">
                 <h2>Pregunta</h2>
                 <textarea placeholder="Escribe aquí la pregunta" id="pregunta"></textarea>
+                
+                <!-- Select de Categorías -->
+                <div>
+                    <label for="selectCategorias">Selecciona una categoría:</label>
+                    <select id="selectCategorias">
+                        <option value="" disabled selected>Elige una categoría...</option>
+                        <!-- Opciones de categorías -->
+                        <option value="matematicas">Matemáticas</option>
+                        <option value="historia">Historia</option>
+                        <option value="ciencias">Ciencias</option>
+                        <option value="geografia">Geografía</option>
+                    </select>
+                </div>
+    
                 <div class="respuestas">
                     <div class="respuesta">
                         <label for="respuesta1">Respuesta 1:</label>
-                        <input type="text" id="respuesta1" placeholder="Escribe la respuesta 1" >
+                        <input type="text" id="respuesta1" placeholder="Escribe la respuesta 1">
                         <div class="correcto">
                             <span>¿Correcta?</span>
                             <input type="radio" name="respuestaCorrecta" value="1" title="Respuesta correcta">
@@ -36,7 +50,7 @@
                     </div>
                     <div class="respuesta">
                         <label for="respuesta2">Respuesta 2:</label>
-                        <input type="text" id="respuesta2" placeholder="Escribe la respuesta 2" >
+                        <input type="text" id="respuesta2" placeholder="Escribe la respuesta 2">
                         <div class="correcto">
                             <span>¿Correcta?</span>
                             <input type="radio" name="respuestaCorrecta" value="2" title="Respuesta correcta">
@@ -44,7 +58,7 @@
                     </div>
                     <div class="respuesta">
                         <label for="respuesta3">Respuesta 3:</label>
-                        <input type="text" id="respuesta3" placeholder="Escribe la respuesta 3" >
+                        <input type="text" id="respuesta3" placeholder="Escribe la respuesta 3">
                         <div class="correcto">
                             <span>¿Correcta?</span>
                             <input type="radio" name="respuestaCorrecta" value="3" title="Respuesta correcta">
@@ -56,6 +70,7 @@
             </form>
         </div>
     </main>
+    
     <footer>
         <div class="footerDiv">
             <h2><a id="botonVolver"><i class="material-icons">chevron_left</i>volver</a></h2>
