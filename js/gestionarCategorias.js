@@ -33,11 +33,12 @@ window.addEventListener("DOMContentLoaded", function () {
         mostrarRol.append(mensajeRol);
     }
 
+    // Consigo el array de categorias, y si no existe lo creo
     let categorias = JSON.parse(localStorage.getItem("categorias"));
     if (!categorias) {  //Si no existe el array de categorías lo creo de nuevo
         categorias = ["ADAS", "Señales", "Carreteras"];
     }
-
+    // Muestro las categoriass en la lista, creado un li para cada elemento y añadiendolo al final
     categorias.forEach(categoria => {
         let li = document.createElement("li");
         li.innerHTML = `${categoria} <button id="botonBorrar">Borrar</button>`;
@@ -48,13 +49,23 @@ window.addEventListener("DOMContentLoaded", function () {
     botonAgregar.addEventListener("click", function (event) {
         event.preventDefault();
 
+        //Guardo el valor ingresado por el usuario y le quito los espacios en blanco para evitar problemas
         let nuevaCategoria = document.getElementById("nuevaCategoria").value.trim();
 
+        // Si no esta vacio lo añado a la lista y al array de categorias
         if (nuevaCategoria) {
             let li = document.createElement("li");
             li.innerHTML = `${nuevaCategoria} <button id="botonBorrar">Borrar</button>`;
             lista.appendChild(li);
-            document.getElementById("nuevaCategoria").value = ''; // Limpiar campo
+
+            categorias.push(nuevaCategoria);
+            console.log(categorias);
+
+            localStorage.setItem("categorias", JSON.stringify(categorias));
+
+            document.getElementById("nuevaCategoria").value = ''; 
+
+            //Si esta vacio muestro un mensaje de error
         } else {
             alert("Por favor, ingrese una categoría válida.");
         }
@@ -72,7 +83,20 @@ window.addEventListener("DOMContentLoaded", function () {
                 let nombreCategoria = li.textContent.replace("Borrar", "");
                 //Muestro un mensaje de confirmacion con un mensaje concatenando el texto de la categoria
                 if (confirm(`¿Está seguro de que desea eliminar la categoría "${nombreCategoria}"?`)) {
-                    li.remove();
+
+                    let index = categorias.findIndex(categoria => nombreCategoria.trim() == categoria); //Uso trim() para quitar los espacios en blanco, si no no funciona
+
+                    if (index == -1) {
+                        alert("La categoria existente ya esta borrada");
+                    } else {
+                        console.log(categorias.splice(index, 1));
+
+                        console.log(index);
+
+                        li.remove();
+
+                        localStorage.setItem("categorias",JSON.stringify(categorias));
+                    }
                 }
             }
         }
