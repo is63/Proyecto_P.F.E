@@ -27,6 +27,18 @@ window.addEventListener("DOMContentLoaded", function () {
         categorias = ["ADAS", "Señales", "Carreteras"];
     }
 
+    let selectCategoria = this.document.getElementById("selectCategorias");
+
+    categorias.forEach(categoria => {
+        console.log(categoria);
+        
+        let opcion = document.createElement("option");
+        opcion.setAttribute("value", categoria);
+        opcion.textContent = categoria;
+        selectCategoria.appendChild(opcion);
+
+    });
+
     //guardo el titulo para mostrar mas adelante el mensaje de error abajo suyo
     let titulopreguntas = this.document.getElementById("editarPreguntas").firstElementChild;
 
