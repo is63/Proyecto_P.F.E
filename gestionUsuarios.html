@@ -14,37 +14,99 @@
 <body>
     <header>
         <div class="headerDiv">
-            <img src="imagenes/gatoConduciendo.png">
+            <img src="imagenes/gatoConduciendo.png" alt="Logo">
             <h2>Bienvenido</h2>
             <h2 id="rol">Rol: </h2>
         </div>
     </header>
+
     <main>
-        <div id="gestion">
-            <section id="verificados">
-                <div>
-                    <h1>Usuarios Verificados</h1>
-                    <h1>Borrar</h1>
-                    <h1>Validados</h1>
-                </div>
-                <p>Aqui va otro usuario <input type="button" ><input type="checkbox"></p> 
-            </section>
-            <section id="noVerificados">
-                <div>
-                    <h1>Usuarios No Verificados</h1>
-                    <h1>Borrar</h1>
-                    <h1>Validar</h1>
-                </div>
-                
-            </section>
+        <div id="preguntasContainer">
+            <h1>Listado de Preguntas</h1>
+            <div id="preguntasLista">
+                <!-- Ejemplo de pregunta -->
+                <details>
+                    <summary>¿Cuál es el límite de velocidad en zonas urbanas?</summary>
+                    <p><strong>Categoría:</strong> Señales</p>
+                    <p><strong>Respuestas:</strong></p>
+                    <ul>
+                        <li>50 km/h</li>
+                        <li>70 km/h</li>
+                        <li>90 km/h</li>
+                    </ul>
+                    <p><strong>Correcta:</strong> 50 km/h</p>
+                </details>
+
+                <details>
+                    <summary>¿Qué significa una señal triangular roja?</summary>
+                    <p><strong>Categoría:</strong> Señales</p>
+                    <p><strong>Respuestas:</strong></p>
+                    <ul>
+                        <li>Peligro</li>
+                        <li>Prohibición</li>
+                        <li>Obligación</li>
+                    </ul>
+                    <p><strong>Correcta:</strong> Peligro</p>
+                </details>
+            </div>
         </div>
-        <button id="confirmar">Confirmar</button>
     </main>
+
     <div class="footerDiv">
         <h2><a id="botonVolver"><i class="material-icons">chevron_left</i>volver</a></h2>
         <h2>Autoescuela Proyecto</h2>
         <h2><a id="botonSalir">Salir<i class="material-icons">power_settings_new</i></a></h2>
     </div>
+
+    <script>
+        // Puedes añadir dinámicamente preguntas usando JavaScript
+        const preguntasContainer = document.getElementById('preguntasLista');
+
+        const preguntas = [
+            {
+                pregunta: '¿Qué hacer ante una señal de stop?',
+                categoria: 'Señales',
+                respuestas: ['Detenerse completamente', 'Reducir velocidad', 'Ignorarla si no hay vehículos'],
+                correcta: 'Detenerse completamente'
+            },
+            {
+                pregunta: '¿Qué significa una línea continua en la carretera?',
+                categoria: 'Carreteras',
+                respuestas: ['Prohibido adelantar', 'Cambio de carril permitido', 'Zona escolar'],
+                correcta: 'Prohibido adelantar'
+            }
+        ];
+
+        preguntas.forEach(preg => {
+            const detalle = document.createElement('details');
+            const summary = document.createElement('summary');
+            summary.textContent = preg.pregunta;
+
+            const categoria = document.createElement('p');
+            categoria.innerHTML = `<strong>Categoría:</strong> ${preg.categoria}`;
+
+            const respuestas = document.createElement('p');
+            respuestas.innerHTML = '<strong>Respuestas:</strong>';
+
+            const listaRespuestas = document.createElement('ul');
+            preg.respuestas.forEach(resp => {
+                const li = document.createElement('li');
+                li.textContent = resp;
+                listaRespuestas.appendChild(li);
+            });
+
+            const correcta = document.createElement('p');
+            correcta.innerHTML = `<strong>Correcta:</strong> ${preg.correcta}`;
+
+            detalle.appendChild(summary);
+            detalle.appendChild(categoria);
+            detalle.appendChild(respuestas);
+            detalle.appendChild(listaRespuestas);
+            detalle.appendChild(correcta);
+
+            preguntasContainer.appendChild(detalle);
+        });
+    </script>
 
 </body>
 
