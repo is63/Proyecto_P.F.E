@@ -267,9 +267,6 @@ window.addEventListener("DOMContentLoaded", function () {
     });
 
 
-
-
-
     //  Boton de Volver del Footer  //
     botonVolver.addEventListener("click", () => {
         //Redirecciona a la página anterior 
