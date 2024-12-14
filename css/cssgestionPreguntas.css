@@ -85,12 +85,6 @@ main {
     margin-top: 1vh; /* Espaciado entre el título y contenido */
 }
 
-/* Botones dentro de detalles */
-#preguntasContainer .botones {
-    margin-top: 1vh; /* Espaciado entre texto y botones */
-    display: flex; /* Flex para botones */
-    gap: 1vh; /* Separación entre botones */
-}
 
 button {
     background-color: #5ba4f7e5; /* Fondo del botón */
@@ -104,15 +98,8 @@ button {
     transition: background-color 0.3s ease; /* Transición suave */
 }
 
-.editar {
-    background-color: #4CAF50; /* Verde para "Editar" */
-}
-
-.editar:hover {
-    background-color: #45a049; /* Verde más oscuro al pasar el mouse */
-}
-
 .borrar {
+    margin-top: 1vh;
     background-color: #f44336; /* Rojo para "Borrar" */
 }
 
