@@ -16,7 +16,7 @@ window.addEventListener("DOMContentLoaded", function () {
     //Crear array de preguntas que no se borre como en el index
     let preguntas = [];
     if(localStorage.getItem("preguntas")){
-        preguntas = localStorage.getItem("preguntas");
+        preguntas = JSON.parse(localStorage.getItem("preguntas"));
         
     }
 
@@ -187,7 +187,7 @@ window.addEventListener("DOMContentLoaded", function () {
             preguntas.push(preguntaCompleta);
 
             localStorage.setItem("preguntas", JSON.stringify(preguntas));
-            window.location.href = "elegirExamen.html";
+            window.location.href = "gestionPreguntas.html";
         }
 
     });
