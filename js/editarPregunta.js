@@ -20,14 +20,26 @@ window.addEventListener("DOMContentLoaded", function () {
         
     }
 
+    //Guardo el array de categorias
+    let categorias = JSON.parse(localStorage.getItem("categorias"));
+    //Si no existe el array de categorías lo creo de nuevo
+    if (!categorias) {  //Si no existe el array de categorías lo creo de nuevo
+        categorias = ["ADAS", "Señales", "Carreteras"];
+    }
+
     //guardo el titulo para mostrar mas adelante el mensaje de error abajo suyo
     let titulopreguntas = this.document.getElementById("editarPreguntas").firstElementChild;
 
 
     //Creo un elemento p para mostrar el mensaje de error por si la pregunta en blanco
     let mensajeErrorPregunta = document.createElement("p");
-    //Pongo el mensaje el blanco por si falla mas de 1 vez no se acumulen
+    //Pongo el mensaje en blaco para que sea flash y se vacie al actualizar
     mensajeErrorPregunta.textContent = "";
+
+    //Creo un elemento p para mostrar el mensaje de error por si no se elige categoria
+    let mensajeErrorCategoria = document.createElement("p");
+    //Pongo el mensaje en blaco para que sea flash y se vacie al actualizar
+    mensajeErrorCategoria.textContent = "";
 
     //Creo un elemento p para mostrar el mensaje de error por si hay una respuesta en blanco
     let mensajeErrorRespuestas = document.createElement("p");
@@ -65,16 +77,14 @@ window.addEventListener("DOMContentLoaded", function () {
         //  Guardo los valores del formulario  //
 
         let pregunta = document.getElementById("pregunta").value;
-        console.log(pregunta);
+
+        let categoria = document.getElementById("selectCategorias").value;
 
         let respuesta1 = document.getElementById("respuesta1").value;
-        console.log(respuesta1);
 
         let respuesta2 = document.getElementById("respuesta2").value;
-        console.log(respuesta2);
 
         let respuesta3 = document.getElementById("respuesta3").value;
-        console.log(respuesta3);
 
         // Consigo un array con los valores del radiobutton
         let valores = document.getElementsByName("respuestaCorrecta");
@@ -88,11 +98,6 @@ window.addEventListener("DOMContentLoaded", function () {
                 break; //Salgo del bucle
             }
         }
-
-        console.log(valorCorrecto);
-
-
-
 
         //  Si no hay seleccionada una respuesta correcta salta un mensaje de error de debajo del titulo 
         if (valorCorrecto == undefined || valorCorrecto == "" || valorCorrecto == null) {
@@ -121,8 +126,19 @@ window.addEventListener("DOMContentLoaded", function () {
 
         }
 
-        //Si la pregunta esta en blanco, muestro un mensaje de error debajo del titulo
-        if (pregunta == "") {
+        if(!categoria){
+            mensajeErrorCategoria.textContent = "Selecciona una categoria valida";
+            mensajeErrorCategoria.style.color = "red";
+            mensajeErrorCategoria.style.margin = "1.5vh";
+            mensajeErrorCategoria.style.textAlign = "center";
+            mensajeErrorCategoria.style.fontWeight = "bolder";
+            mensajeErrorCategoria.style.fontSize = "20px";
+
+            titulopreguntas.after(mensajeErrorCategoria);
+        };
+
+        //Si la pregunta esta en blanco, muestro un mensaje de error debajo del titulo        
+        if (pregunta == "" || pregunta.replace(/\s+/g, '').trim()) {
             mensajeErrorPregunta.textContent = "Completa la pregunta";
             mensajeErrorPregunta.style.color = "red";
             mensajeErrorPregunta.style.margin = "1.5vh";
@@ -148,14 +164,14 @@ window.addEventListener("DOMContentLoaded", function () {
         if (
             (valorCorrecto == undefined || valorCorrecto == "" || valorCorrecto == null)
             || (respuesta1 == "" || respuesta2 == "" || respuesta3 == "")
-            || (pregunta == "")
+            || (pregunta == "" || (categoria == ""))
         ) {
-            alert("deberia detenerse la ejecuccion del programa");
+            console.log("deberia detenerse la ejecuccion del programa");
             return;
         }
         
         else{
-            let preguntaCompleta = `${pregunta} | ${respuesta1} | ${respuesta2} | ${respuesta3} | ${valorCorrecto}`;
+            let preguntaCompleta = `${pregunta} | ${categoria} | ${respuesta1} | ${respuesta2} | ${respuesta3} | ${valorCorrecto}`;
             preguntas.push(preguntaCompleta);
 
             localStorage.setItem("preguntas", JSON.stringify(preguntas));
@@ -163,7 +179,6 @@ window.addEventListener("DOMContentLoaded", function () {
         }
 
     });
-
 
     //  Boton de Cancelar  //
     botonCancelar.addEventListener("click", function (event) { //si cancela se refresca la pagina para que se pierda lo introducido
