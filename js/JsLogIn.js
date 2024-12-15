@@ -90,9 +90,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
     })
 
-
-
-
     //Funcion para registrarse 
 
     botonRegistrarse.addEventListener("submit", function (event) {

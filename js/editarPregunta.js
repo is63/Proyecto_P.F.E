@@ -13,24 +13,25 @@ window.addEventListener("DOMContentLoaded", function () {
 
     //Crear array de preguntas que no se borre como en el index
     let preguntas = [];
+    //Si el localStorage de preguntas existe lo almaceno en preguntas
     if(localStorage.getItem("preguntas")){
         preguntas = JSON.parse(localStorage.getItem("preguntas"));
-        
     }
 
     //Guardo el array de categorias
     let categorias = JSON.parse(localStorage.getItem("categorias"));
     //Si no existe el array de categorías lo creo de nuevo
-    if (!categorias) {  //Si no existe el array de categorías lo creo de nuevo
+    if (!categorias) { 
         categorias = ["ADAS", "Señales", "Carreteras"];
         localStorage.setItem("categorias", JSON.stringify(categorias));
     }
 
-    let selectCategoria = this.document.getElementById("selectCategorias");
+    //Guardo el select donde aparecen las categorias
+    let selectCategoria = document.getElementById("selectCategorias");
 
+    //Recorro el array de categorias para mostrarlo en el select
     categorias.forEach(categoria => {
-        //console.log(categoria);
-        
+        //Creo el elemento option, le asigno el valor y lo añado al select
         let opcion = document.createElement("option");
         opcion.setAttribute("value", categoria);
         opcion.textContent = categoria;
@@ -66,13 +67,15 @@ window.addEventListener("DOMContentLoaded", function () {
     let mostrarRol = document.getElementById("rol");
 
     //Recupero el rol seleccionado en la página anterior
-    let rol = this.localStorage.getItem("rolSesion");
+    let rol = localStorage.getItem("rolSesion");
 
     //si esta vacio o no existe, hago una redireccion al index para que inicie Sesion
     if (rol == "" || rol == undefined) {
         window.location.href = "index.html";
     }
+    //Si el rol no esta vacio, lo muestro en elemento del header
     else {
+        //Creo un elemento a para guardarlo y le doy un estilo
         let mensajeRol = document.createElement("a");
         mensajeRol.style.color = "green";
         mensajeRol.textContent = rol;
@@ -81,11 +84,11 @@ window.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    //Boton de Guardar  //
+    //Boton de Guardar  
     botonGuardar.addEventListener("click", function (event) {
         event.preventDefault();
 
-        //  Guardo los valores del formulario  //
+        //  Guardo los valores del formulario  
 
         let pregunta = document.getElementById("pregunta").value;
 
@@ -97,11 +100,11 @@ window.addEventListener("DOMContentLoaded", function () {
 
         let respuesta3 = document.getElementById("respuesta3").value;
 
-        // Consigo un array con los valores del radiobutton
+        // Guardo los valores del radiobutton
         let valores = document.getElementsByName("respuestaCorrecta");
         let valorCorrecto;
 
-        //Recorro el radio button buscando el valor seleccionado
+        //Recorro el radiobutton buscando el valor seleccionado
         for (let i = 0; i < valores.length; i++) {
 
             if (valores[i].checked) {//Si el valor esta selecionado
@@ -112,7 +115,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
         //  Si no hay seleccionada una respuesta correcta salta un mensaje de error de debajo del titulo 
         if (valorCorrecto == undefined || valorCorrecto == "" || valorCorrecto == null) {
-
+            //Le doy un estilo al mensaje de error
             mensajeErroCorrecta.textContent = "Selecciona una respuesta correcta";
             mensajeErroCorrecta.style.color = "red";
             mensajeErroCorrecta.style.margin = "1.5vh";
@@ -126,6 +129,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
         //  Si las algunas de las preguntas esta en blanco salta un mensaje de error de debajo del titulo 
         if (respuesta1 == "" || respuesta2 == "" || respuesta3 == "") {
+            //Le doy un estilo al mensaje de error
             mensajeErrorRespuestas.textContent = "Completa las respuestas";
             mensajeErrorRespuestas.style.color = "red";
             mensajeErrorRespuestas.style.margin = "1.5vh";
@@ -138,6 +142,7 @@ window.addEventListener("DOMContentLoaded", function () {
         }
 
         if(!categoria){
+            //Le doy un estilo al mensaje de error
             mensajeErrorCategoria.textContent = "Selecciona una categoria valida";
             mensajeErrorCategoria.style.color = "red";
             mensajeErrorCategoria.style.margin = "1.5vh";
@@ -149,7 +154,8 @@ window.addEventListener("DOMContentLoaded", function () {
         };
 
         //Si la pregunta esta en blanco, muestro un mensaje de error debajo del titulo        
-        if (pregunta == "" || pregunta.replace(/\s+/g, '').trim()) {
+        if (pregunta == "" || pregunta.replace(/\s+/g, '').trim()) { //El .replace ese con el trim() es para intentar quitar los espacios en blanco y saltos de linea (no lo hace completamente pero algo ayuda, ademas de que el codigo esta estructurado segun lo que devuelve esto a si que si lo cambio no funcionara casi nada relacionado con las preguntas)
+            //Le doy un estilo al mensaje de error
             mensajeErrorPregunta.textContent = "Completa la pregunta";
             mensajeErrorPregunta.style.color = "red";
             mensajeErrorPregunta.style.margin = "1.5vh";
@@ -181,11 +187,14 @@ window.addEventListener("DOMContentLoaded", function () {
             return;
         }
         
+        //Si no hay ningun error guardo la pregunta en el array de preguntas y lo almaceno en el LocalStorage
         else{
             let preguntaCompleta = `${pregunta} | ${categoria} | ${respuesta1} | ${respuesta2} | ${respuesta3} | ${valorCorrecto}`;
             preguntas.push(preguntaCompleta);
 
             localStorage.setItem("preguntas", JSON.stringify(preguntas));
+            
+            //Redirecciono a la pagina de Gestionar Preguntas
             window.location.href = "gestionPreguntas.html";
         }
 

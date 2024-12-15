@@ -58,15 +58,19 @@ window.addEventListener("DOMContentLoaded", function () {
 
         // Si no esta vacio lo añado a la lista y al array de categorias
         if (nuevaCategoria) {
+            //Creo el elemento li, le añado el contenido y lo añado a la lista
             let li = document.createElement("li");
             li.innerHTML = `${nuevaCategoria} <button id="botonBorrar">Borrar</button>`;
             lista.appendChild(li);
 
+            //Añado la nueva categoria en el array de categorias
             categorias.push(nuevaCategoria);
             console.log(categorias);
 
+            //Guardo el array de categorias en el localStorage
             localStorage.setItem("categorias", JSON.stringify(categorias));
 
+            //Vacio el valor del input
             document.getElementById("nuevaCategoria").value = '';
 
             //Si esta vacio muestro un mensaje de error
@@ -83,22 +87,21 @@ window.addEventListener("DOMContentLoaded", function () {
             let li = event.target.closest("li");
             //Si no es null o undefined borro el li
             if (li) {
-                //cojo el texto dentro del li y borro el del boton
+                //Selecciono el texto dentro del li y borro el texto que corresponde con el boton de Borrar
                 let nombreCategoria = li.textContent.replace("Borrar", "");
                 //Muestro un mensaje de confirmacion con un mensaje concatenando el texto de la categoria
                 if (confirm(`¿Está seguro de que desea eliminar la categoría "${nombreCategoria}"?`)) {
-
+                    //Busco el indice de la categoria seleccionada 
                     let index = categorias.findIndex(categoria => nombreCategoria.trim() == categoria); //Uso trim() para quitar los espacios en blanco, si no no funciona
 
                     if (index == -1) {
                         alert("La categoria existente ya esta borrada");
                     } else {
-                        console.log(categorias.splice(index, 1));
-
-                        console.log(index);
-
+                        //Borro la categoria del array de categorias
+                        categorias.splice(index, 1);
+                        //Borro la categoria de la lista
                         li.remove();
-
+                        //Guardo el array sin la categoria en el localStorage
                         localStorage.setItem("categorias", JSON.stringify(categorias));
                     }
                 }

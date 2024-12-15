@@ -1,12 +1,12 @@
 window.addEventListener("DOMContentLoaded", function () {
 
-    // Referencias a los elementos clave
+    // Guardo los elementos clave
     let mostrarRol = document.getElementById("rol");
     let gestionDiv = document.getElementById("gestion").querySelector("div");
     let botonCrearExamen = document.getElementById("crearPregunta"); // Botón Crear Examen
     let rol = localStorage.getItem("rolSesion");
 
-    // Guardar los botones del Footer de Volver y Salir
+    // Guardo los botones del Footer de Volver y Salir
     let botonVolver = document.getElementById("botonVolver");
     let botonSalir = document.getElementById("botonSalir");
 
@@ -16,18 +16,16 @@ window.addEventListener("DOMContentLoaded", function () {
         return;
     }
 
-    
-
-    // Mostrar rol en la página
+    // Mouesto el rol en la pagina
     let mensajeRol = document.createElement("a");
     mensajeRol.style.color = "green";
     mensajeRol.textContent = rol;
     mostrarRol.append(mensajeRol);
 
-    // Recuperar exámenes del localStorage
+    // Recupero el array examenes del localStorage
     let examenes = JSON.parse(localStorage.getItem("examenes")) || [];
 
-    // Si no hay exámenes, muestra un mensaje
+    // Si no hay examenes, muestra un mensaje
     if (examenes.length === 0) {
         let mensaje = document.createElement("p");
         mensaje.textContent = "No hay exámenes disponibles.";
@@ -35,81 +33,87 @@ window.addEventListener("DOMContentLoaded", function () {
         return;
     }
 
-    // Crear dinámicamente los detalles para cada examen
+    // Creo los detalles de cada examen
     examenes.forEach(examen => {
-        // Dividir los datos del examen
+        
+        // Guardo los datos del examen
         let nombre = examen.split("|")[0];
         let descripcion = examen.split("|")[1];
         let categoria = examen.split("|")[2];
 
-        let preguntas = examen.split("|")[3].split("~"); // Convertir las preguntas en un array
+        let preguntas = examen.split("|")[3].split("~"); // El array de preguntas lo separo por el simbolo ~
 
-        // Crear el elemento <details>
+        // Creo el elemento <details>
         let details = document.createElement("details");
 
-        // Crear el <summary> con el nombre del examen
+        // Creo el <summary> con el nombre del examen
         let summary = document.createElement("summary");
         summary.textContent = nombre;
         details.appendChild(summary);
 
-        // Crear un párrafo con la descripción del examen
+        // Creo un parrafo con la descripcion del examen
         let descripcionP = document.createElement("p");
         descripcionP.textContent = `Descripción: ${descripcion}`;
         descripcionP.style.color = "black"
         details.appendChild(descripcionP);
 
-        // Crear un párrafo con la categoría del examen
+        // Creo un parrafo con la categoria del examen
         let categoriaP = document.createElement("p");
         categoriaP.textContent = `Categoría: ${categoria}`;
+        //Le doy algo de estilo al parrafo
         categoriaP.style.fontWeight = "bolder";
         categoriaP.style.textDecoration = "underline";
         details.appendChild(categoriaP);
 
-        // Crear un párrafo con la cantidad de preguntas
+        // Creo un parrafo con la cantidad de preguntas
         let preguntasP = document.createElement("p");
         preguntasP.textContent = `Número de preguntas: ${preguntas.length}`;
         details.appendChild(preguntasP);
 
-        // Crear los botones "Intentar" y "Borrar"
-        let intentarBtn = document.createElement("button");
-        intentarBtn.textContent = "Intentar";
-        intentarBtn.className = "intentar";
+        // Creo los botones de Intentar y Borrar
+        let botonInsertar = document.createElement("button");
+        botonInsertar.textContent = "Intentar";
+        botonInsertar.className = "intentar";
         
-        let borrarBtn = document.createElement("button");
-        borrarBtn.textContent = "Borrar";
-        borrarBtn.className = "borrar";
-        
-
-        // Agregar los botones al <details>
-        details.appendChild(intentarBtn);
-        if(rol != "Alumno"){details.appendChild(borrarBtn);}
+        let botonBorrar = document.createElement("button");
+        botonBorrar.textContent = "Borrar";
+        botonBorrar.className = "borrar";
         
 
-        // Agregar el <details> al contenedor principal
+        // Agrego los botones al <details>
+        details.appendChild(botonInsertar);
+        //Si el rol es de Alumno no añado el boton de borrar
+        if(rol != "Alumno"){details.appendChild(botonBorrar);}
+        
+        // Agrego el <details> al contenedor principal
         gestionDiv.appendChild(details);
 
         
+
+        // A los botones le añado la funcionalidad dentro del ForEach porque estan declarados aqui dentro para que haya uno para cada examen
+
         // Evento para borrar el examen
-        borrarBtn.addEventListener("click", () => {
-            // Filtrar el examen actual del array de exámenes
-            let examenesActualizados = examenes.filter(e => e !== examen);
+        botonBorrar.addEventListener("click", () => {
+            // Filtrar el examen actual del array de examenes y devuelve todos los examenes menos el seleccionado
+            let examenesActualizados = examenes.filter(e => e != examen);
             localStorage.setItem("examenes", JSON.stringify(examenesActualizados));
-            alert("Examen eliminado correctamente.");
-            location.reload(); // Recargar la página
+            location.reload(); // Recargo la pagina
         });
     
 
-        // Evento para intentar el examen (puedes personalizarlo)
-        intentarBtn.addEventListener("click", () => {
-            alert(`Iniciando el examen: ${nombre}`);
+        // Evento para realizar el examen 
+        botonInsertar.addEventListener("click", () => {
+            //Guardo el nombre del examen seleccionado y redirecciono a la pagina donde se va a realizar
             localStorage.setItem("examen", nombre);
-            this.window.location.href = "intentarExamen.html";
-            // Aquí puedes redirigir a una página de intento de examen
+            window.location.href = "intentarExamen.html";
+            
         });
+
+
     });
 
-    // Redirigir al usuario a la página "editarExamen.html" al hacer clic en "Crear Examen"
-    botonCrearExamen.addEventListener("click", () => {
+    // Boton Crear Examen
+        botonCrearExamen.addEventListener("click", () => {
         window.location.href = "editarExamen.html";
     });
 
