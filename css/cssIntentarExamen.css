@@ -1,0 +1,103 @@
+/* General Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f5f5f5;
+}
+
+
+header {
+    height: 6vh; /* Altura del encabezado */
+    background-color: #419affde; /* Color de fondo */
+    display: flex; /* Usar flexbox para el contenido del header */
+    justify-content: center; /* Centrar horizontalmente los elementos */
+    align-items: center; /* Centrar verticalmente los elementos */
+}
+
+.headerDiv {
+    display: flex; /* Usar flexbox para el contenido del encabezado */
+    align-items: center; /* Centrar verticalmente los elementos */
+    justify-content: space-between; 
+    width: 100%; /* Ancho completo para alinear correctamente */
+    padding: 2vh; /* Espaciado horizontal dentro del header */
+}
+
+.headerDiv img {
+    height: 5vh; /* Ajustar la altura de la imagen */
+}
+/* Main Container */
+#examenContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 140px);
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+/* Ventana de Preguntas */
+#ventanaPreguntas {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-y: auto;
+}
+
+/* Título del Examen */
+#tituloExamen {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+/* Contenedor de Preguntas */
+#preguntasContainer {
+    flex-grow: 1;
+    overflow-y: auto;
+    margin-bottom: 20px;
+}
+
+#preguntasContainer div {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #f9f9f9;
+}
+
+/* Opciones de Preguntas */
+#preguntasContainer input[type="radio"] {
+    margin-right: 10px;
+}
+
+#preguntasContainer label {
+    margin-right: 20px;
+    font-size: 16px;
+}
+
+/* Botón de Terminar */
+#terminarIntento {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    align-self: center;
+    width: 100%;
+}
+
+#terminarIntento:hover {
+    background-color: #0056b3;
+}

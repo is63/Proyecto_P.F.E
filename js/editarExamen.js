@@ -22,8 +22,8 @@ window.addEventListener("DOMContentLoaded", function () {
     }
 
     // Recuperar y mostrar categorías en el select
-    let categorias = JSON.parse(localStorage.getItem("categorias")) || [];
-    if (!categorias.length) {
+    let categorias = JSON.parse(localStorage.getItem("categorias"));
+    if (categorias == null) {
         window.location.href = "gestionarCategorias.html";
     }
 
@@ -36,8 +36,8 @@ window.addEventListener("DOMContentLoaded", function () {
     });
 
     // Recuperar preguntas y mostrarlas con checkboxes
-    let preguntas = JSON.parse(localStorage.getItem("preguntas")) || [];
-    if (!preguntas.length) {
+    let preguntas = JSON.parse(localStorage.getItem("preguntas"));
+    if (preguntas  == null) {
         window.location.href = "gestionPreguntas.html";
     }
 
@@ -116,7 +116,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
         // Guardar el array de examenes en localStorage
         localStorage.setItem("examenes", JSON.stringify(examenes));
-        alert("Examen guardado exitosamente.");
+        this.window.location.href = "GestionExamen.html";
 
         // Limpiar el formulario
         nombreExamen.value = "";
