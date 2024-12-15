@@ -1,180 +1,200 @@
+/* Reset General */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin: 0; /* Elimina margenes predeterminados */
+    padding: 0; /* Elimina rellenos predeterminados */
+    box-sizing: border-box; /* Incluye borde y relleno en el calculo del ancho y alto */
 }
 
+/* Estilo del Body */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+    font-family: Arial, sans-serif; /* Estilo de fuente principal */
+    background-color: #f9f9f9; /* Color de fondo claro */
+    display: flex; /* Usar flexbox para organizar el contenido */
+    flex-direction: column; /* Organizar el contenido en columna */
+    min-height: 100vh; /* Altura minima igual a la ventana del navegador */
 }
 
+/* Header (Encabezado) */
 header {
-    position: flex; /* Fijar el header en la parte superior */
-    height: 6vh; /* Altura del encabezado */
-    background-color: #419affde; /* Color de fondo */
-    display: flex; /* Usar flexbox para el contenido del header */
-    justify-content: center; /* Centrar horizontalmente los elementos */
-    align-items: center; /* Centrar verticalmente los elementos */
+    position: flex; /* Organizacion flexible, permite posicionar elementos */
+    height: 6vh; /* Altura fija del encabezado */
+    background-color: #419affde; /* Color de fondo azul con opacidad */
+    display: flex; /* Usar flexbox para organizar contenido interno */
+    justify-content: center; /* Centrar los elementos horizontalmente */
+    align-items: center; /* Centrar los elementos verticalmente */
 }
 
 .headerDiv {
-    display: flex; /* Usar flexbox para el contenido del encabezado */
+    display: flex; /* Usar flexbox en el contenedor del encabezado */
     align-items: center; /* Centrar verticalmente los elementos */
-    justify-content: space-between; 
-    width: 100%; /* Ancho completo para alinear correctamente */
-    padding: 2vh; /* Espaciado horizontal dentro del header */
+    justify-content: space-between; /* Espacio entre elementos */
+    width: 100%; /* Ocupa todo el ancho disponible */
+    padding: 2vh; /* Espaciado interno */
 }
 
 .headerDiv img {
     height: 5vh; /* Ajustar la altura de la imagen */
 }
 
+/* Estilo General para Main */
 main {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    flex: 1; /* Permite que el contenido ocupe todo el espacio disponible */
+    display: flex; /* Usar flexbox para centrar el contenido */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
 }
 
+/* Contenedor del Formulario Modificar Examen */
 #modificarExamen {
-    width: 80%;
-    max-width: 600px;
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%; /* Ancho relativo */
+    max-width: 600px; /* Ancho maximo */
+    background: white; /* Fondo blanco */
+    padding: 20px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
 
+/* Titulos del Formulario */
 #modificarExamen h1 {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 24px;
-    color: #333;
+    text-align: center; /* Centrar texto */
+    margin-bottom: 20px; /* Espaciado inferior */
+    font-size: 24px; /* Tamaño del texto */
+    color: #333; /* Color del texto */
 }
 
 #modificarExamen h2 {
-    margin-top: 20px;
-    margin-bottom: 10px;
-    font-size: 20px;
-    color: #555;
+    margin-top: 20px; /* Espaciado superior */
+    margin-bottom: 10px; /* Espaciado inferior */
+    font-size: 20px; /* Tamaño de texto */
+    color: #555; /* Color gris oscuro */
 }
 
+/* Etiquetas de Formularios */
 form label {
-    font-weight: bold;
-    display: block;
-    margin-top: 15px;
-    margin-bottom: 5px;
-    color: #555;
+    font-weight: bold; /* Texto en negrita */
+    display: block; /* Mostrar como bloque */
+    margin-top: 15px; /* Espaciado superior */
+    margin-bottom: 5px; /* Espaciado inferior */
+    color: #555; /* Color gris oscuro */
 }
 
+/* Campos de Texto y Areas de Texto */
 form input[type="text"],
 form textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-}
-
-form textarea {
-    resize: none;
-}
-
-#categorias label {
-    display: inline-block;
-    margin-right: 15px;
-    font-size: 16px;
-    color: #555;
-}
-
-#listaPreguntas {
-    margin-top: 15px;
-    max-height: 200px; /* Altura máxima del contenedor */
-    overflow-y: auto; /* Habilitar desplazamiento vertical */
-    border: 1px solid #ccc; /* Borde para diferenciar el área */
+    width: 100%; /* Ancho completo */
     padding: 10px; /* Espaciado interno */
-    border-radius: 5px;
-    background-color: #f9f9f9;
+    border: 1px solid #ccc; /* Borde gris claro */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 16px; /* Tamaño del texto */
 }
 
+/* Areas de Texto */
+form textarea {
+    resize: none; /* Deshabilitar cambio de tamaño */
+}
+
+/* Etiquetas de Categorias */
+#categorias label {
+    display: inline-block; /* Mostrar etiquetas en una linea */
+    margin-right: 15px; /* Espaciado a la derecha */
+    font-size: 16px; /* Tamaño de texto */
+    color: #555; /* Color gris oscuro */
+}
+
+/* Lista de Preguntas */
+#listaPreguntas {
+    margin-top: 15px; /* Espaciado superior */
+    max-height: 200px; /* Altura maxima del contenedor */
+    overflow-y: auto; /* Habilitar desplazamiento vertical */
+    border: 1px solid #ccc; /* Borde gris claro */
+    padding: 10px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    background-color: #f9f9f9; /* Fondo claro */
+}
+
+/* Estilo de Preguntas */
 .pregunta {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
+    display: flex; /* Usar flexbox para organizar */
+    align-items: center; /* Centrar verticalmente */
+    margin-bottom: 10px; /* Espaciado inferior */
 }
 
 .pregunta input {
-    margin-right: 10px;
+    margin-right: 10px; /* Espaciado a la derecha */
 }
 
+/* Botones del Formulario */
 form button {
-    width: 48%;
-    padding: 10px;
-    margin-top: 20px;
-    font-size: 16px;
-    font-weight: bold;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    width: 48%; /* Ancho relativo */
+    padding: 10px; /* Espaciado interno */
+    margin-top: 20px; /* Espaciado superior */
+    font-size: 16px; /* Tamaño del texto */
+    font-weight: bold; /* Texto en negrita */
+    color: white; /* Texto blanco */
+    border: none; /* Sin bordes */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar por el boton */
+    transition: background-color 0.3s ease; /* Transicion para cambio de color */
 }
 
+/* Selector de Opciones */
 form select {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-    background-color: white;
-    color: #555;
+    width: 100%; /* Ancho completo */
+    padding: 10px; /* Espaciado interno */
+    border: 1px solid #ccc; /* Borde gris claro */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 16px; /* Tamaño del texto */
+    background-color: white; /* Fondo blanco */
+    color: #555; /* Color gris oscuro */
 }
 
-
+/* Boton Guardar Cambios */
 #guardarCambios {
-    background-color: #4CAF50;
+    background-color: #4CAF50; /* Verde */
 }
 
 #guardarCambios:hover {
-    background-color: #45a049;
+    background-color: #45a049; /* Verde mas oscuro al pasar el mouse */
 }
 
+/* Boton Cancelar */
 #cancelar {
-    background-color: #f44336;
+    background-color: #f44336; /* Rojo */
 }
 
 #cancelar:hover {
-    background-color: #d32f2f;
+    background-color: #d32f2f; /* Rojo mas oscuro al pasar el mouse */
 }
 
+/* Footer (Pie de Pagina) y Header Compartiendo Estilo */
 .footerDiv, header {
-    height: 6vh; /* Altura de los encabezados y pies de página */
-    background-color: #60a8fade; /* Color de fondo con opacidad */
-    text-align: center; /* Centrar el texto horizontalmente */
-    line-height: 5.5vh; /* Altura de línea para centrar el texto verticalmente */
+    height: 6vh; /* Altura fija */
+    background-color: #60a8fade; /* Fondo azul con opacidad */
+    text-align: center; /* Centrar texto horizontalmente */
+    line-height: 5.5vh; /* Centrar texto verticalmente */
 }
 
+/* Estilo de Footer */
 .footerDiv {
-    display: flex; /* Usar flexbox para el contenido del pie de página */
-    justify-content: space-between; /* Espacio entre los elementos */
-    align-items: center; /* Centrar verticalmente los elementos */
-    width: 100%; /* Ancho completo del footer */
+    display: flex; /* Usar flexbox para organizar */
+    justify-content: space-between; /* Espacio entre elementos */
+    align-items: center; /* Centrar verticalmente */
+    width: 100%; /* Ancho completo */
 }
 
-.footerDiv a{
-    text-decoration: none; /*Decoraciones del texto*/
-    color:white; /*Color del texto*/
-    font-weight: bolder; /*Estilo o Tamaño del texto*/
+/* Enlaces del Footer */
+.footerDiv a {
+    text-decoration: none; /* Sin subrayado */
+    color: white; /* Texto blanco */
+    font-weight: bolder; /* Texto en negrita */
 }
 
-.footerDiv a:hover{
-    cursor: pointer;
+/* Enlace al pasar el mouse */
+.footerDiv a:hover {
+    cursor: pointer; /* Cambia el cursor al pasar */
 }
 
-.footerDiv a:last-of-type{
-    margin-right: 2vh;
+/* Ultimo enlace del Footer */
+.footerDiv a:last-of-type {
+    margin-right: 2vh; /* Espaciado a la derecha */
 }

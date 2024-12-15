@@ -1,103 +1,104 @@
-/* General Body Styles */
+/* Estilos Generales del Body */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-color: #f5f5f5;
+    font-family: Arial, sans-serif; /* Establece la fuente principal */
+    margin: 0; /* Elimina los margenes predeterminados */
+    padding: 0; /* Elimina el relleno predeterminado */
+    box-sizing: border-box; /* Asegura que padding y border no afecten las dimensiones totales */
+    background-color: #f5f5f5; /* Aplica un color de fondo claro */
 }
 
-
+/* Header */
 header {
-    height: 6vh; /* Altura del encabezado */
-    background-color: #419affde; /* Color de fondo */
-    display: flex; /* Usar flexbox para el contenido del header */
-    justify-content: center; /* Centrar horizontalmente los elementos */
-    align-items: center; /* Centrar verticalmente los elementos */
+    height: 6vh; /* Define la altura del encabezado */
+    background-color: #419affde; /* Establece el color de fondo */
+    display: flex; /* Usa flexbox para organizar el contenido */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
 }
 
 .headerDiv {
-    display: flex; /* Usar flexbox para el contenido del encabezado */
-    align-items: center; /* Centrar verticalmente los elementos */
-    justify-content: space-between; 
-    width: 100%; /* Ancho completo para alinear correctamente */
-    padding: 2vh; /* Espaciado horizontal dentro del header */
+    display: flex; /* Flexbox para organizar el contenido interno */
+    align-items: center; /* Alinea los elementos verticalmente */
+    justify-content: space-between; /* Espacia uniformemente los elementos */
+    width: 100%; /* Abarca todo el ancho disponible */
+    padding: 2vh; /* Agrega espacio interno en los lados */
 }
 
 .headerDiv img {
-    height: 5vh; /* Ajustar la altura de la imagen */
+    height: 5vh; /* Ajusta la altura de las imagenes dentro del encabezado */
 }
-/* Main Container */
+
+/* Contenedor Principal */
 #examenContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: calc(100vh - 140px);
-    padding: 20px;
-    background-color: #f5f5f5;
+    display: flex; /* Flexbox para organizar el contenido */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    height: calc(100vh - 140px); /* Ajusta la altura restando el espacio ocupado por otros elementos */
+    padding: 20px; /* Espaciado interno */
+    background-color: #f5f5f5; /* Fondo claro para el contenedor principal */
 }
 
 /* Ventana de Preguntas */
 #ventanaPreguntas {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 600px;
-    height: 80%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    overflow-y: auto;
+    background: white; /* Fondo blanco para diferenciarse del contenedor principal */
+    padding: 20px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra para dar efecto de profundidad */
+    width: 100%; /* Ocupa todo el ancho disponible */
+    max-width: 600px; /* Limita el ancho maximo */
+    height: 80%; /* Altura definida para la ventana */
+    display: flex; /* Flexbox para organizar contenido */
+    flex-direction: column; /* Organiza los elementos en columna */
+    justify-content: space-between; /* Distribuye el espacio entre los elementos internos */
+    overflow-y: auto; /* Habilita el scroll vertical si el contenido es extenso */
 }
 
-/* Título del Examen */
+/* Titulo del Examen */
 #tituloExamen {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 24px;
-    color: #333;
+    text-align: center; /* Centra el texto del titulo */
+    margin-bottom: 20px; /* Espaciado inferior del titulo */
+    font-size: 24px; /* Tamaño del texto del titulo */
+    color: #333; /* Color de texto oscuro */
 }
 
 /* Contenedor de Preguntas */
 #preguntasContainer {
-    flex-grow: 1;
-    overflow-y: auto;
-    margin-bottom: 20px;
+    flex-grow: 1; /* Permite que el contenedor crezca segun el contenido disponible */
+    overflow-y: auto; /* Habilita el scroll vertical para las preguntas */
+    margin-bottom: 20px; /* Espaciado inferior del contenedor */
 }
 
 #preguntasContainer div {
-    margin-bottom: 20px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background: #f9f9f9;
+    margin-bottom: 20px; /* Espaciado inferior entre las preguntas */
+    padding: 10px; /* Espaciado interno */
+    border: 1px solid #ddd; /* Borde gris claro para separar las preguntas */
+    border-radius: 5px; /* Bordes redondeados */
+    background: #f9f9f9; /* Fondo claro para cada pregunta */
 }
 
 /* Opciones de Preguntas */
 #preguntasContainer input[type="radio"] {
-    margin-right: 10px;
+    margin-right: 10px; /* Espaciado a la derecha de los botones de opcion */
 }
 
 #preguntasContainer label {
-    margin-right: 20px;
-    font-size: 16px;
+    margin-right: 20px; /* Espaciado entre las opciones */
+    font-size: 16px; /* Tamaño del texto de las opciones */
 }
 
-/* Botón de Terminar */
+/* Boton de Terminar */
 #terminarIntento {
-    padding: 10px 20px;
-    background-color: #007BFF;
-    color: white;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    align-self: center;
-    width: 100%;
+    padding: 10px 20px; /* Espaciado interno para mayor tamaño del boton */
+    background-color: #007BFF; /* Fondo azul para el boton */
+    color: white; /* Texto blanco */
+    font-size: 16px; /* Tamaño del texto */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el boton */
+    align-self: center; /* Centra el boton dentro del contenedor */
+    width: 100%; /* Ancho completo del boton */
 }
 
 #terminarIntento:hover {
-    background-color: #0056b3;
+    background-color: #0056b3; /* Cambia el color del boton al pasar el cursor */
 }

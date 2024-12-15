@@ -1,95 +1,105 @@
+/* Reset General */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin: 0; /* Elimina los margenes predeterminados */
+    padding: 0; /* Elimina el relleno predeterminado */
+    box-sizing: border-box; /* Asegura que el padding y border no afecten las dimensiones totales */
 }
 
+/* Estilo General del Body */
 body {
-    font-family: Arial, sans-serif;
-    background-image: url(../imagenes/fondo_LogIn.jpg);
-    color: #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; 
-    
+    font-family: Arial, sans-serif; /* Establece la fuente principal */
+    background-image: url(../imagenes/fondo_LogIn.jpg); /* Aplica una imagen de fondo */
+    color: #333; /* Color del texto */
+    display: flex; /* Usar flexbox para organizar contenido */
+    justify-content: center; /* Centra horizontalmente el contenido */
+    align-items: center; /* Centra verticalmente el contenido */
+    height: 100vh; /* Ocupa toda la altura de la ventana */
 }
 
+/* Formularios de LogIn y Registro */
 #formLogIn, #formRegistrar {
-    width: 37vh;
-    background-color: #fff;
-    padding: 2vh;
-    border-radius: 8px;
-    display: none; 
-    justify-content: center;
-    box-shadow: 5px 2px 500px 10px rgb(204, 202, 202);
+    width: 37vh; /* Ancho fijo de los formularios */
+    background-color: #fff; /* Fondo blanco */
+    padding: 2vh; /* Espaciado interno */
+    border-radius: 8px; /* Bordes redondeados */
+    display: none; /* Por defecto, ocultos */
+    justify-content: center; /* Centra los elementos dentro del formulario */
+    box-shadow: 5px 2px 500px 10px rgb(204, 202, 202); /* Sombra difusa para dar profundidad */
 }
 
 #formLogIn {
-    display: flex; 
+    display: flex; /* Hace visible y organiza el formulario de LogIn */
 }
 
+/* Titulo de los Formularios */
 form h2 {
-    font-size: 1.8rem;
-    color: #074167;
-    margin-bottom: 2vh;
-    text-align: center;
+    font-size: 1.8rem; /* Tamaño grande del texto */
+    color: #074167; /* Color azul oscuro */
+    margin-bottom: 2vh; /* Espaciado inferior */
+    text-align: center; /* Centra el texto del titulo */
 }
 
+/* Campos de Entrada y Selectores */
 form input, form select {
-    width: 100%;
-    margin: 15px 0;
-    padding: 1.3vh;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 7px;
+    width: 100%; /* Ocupa todo el ancho disponible */
+    margin: 15px 0; /* Espaciado vertical entre campos */
+    padding: 1.3vh; /* Espaciado interno */
+    font-size: 1rem; /* Tamaño de texto */
+    border: 1px solid #ccc; /* Borde gris claro */
+    border-radius: 7px; /* Bordes redondeados */
 }
 
-
+/* Estilo para el Ultimo Campo de Entrada */
 form input:last-of-type {
-    background-color: #074167;
-    color: white;
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
-    padding: 1.2vh;
-    margin-top: 3vh;
-    transition: background-color 0.3s;
+    background-color: #074167; /* Fondo azul oscuro */
+    color: white; /* Texto blanco */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el campo */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 1.2vh; /* Espaciado interno */
+    margin-top: 3vh; /* Espaciado superior */
+    transition: background-color 0.3s; /* Transicion suave al cambiar el fondo */
 }
 
-#formLogIn input:last-of-type{
-    margin-top: 1vh;
+/* Ajuste para el Campo de LogIn */
+#formLogIn input:last-of-type {
+    margin-top: 1vh; /* Espaciado superior reducido */
 }
 
+/* Estilo al Pasar el Mouse por el Ultimo Campo de Entrada */
 form input:last-of-type:hover {
-    background-color: #0a5879;
+    background-color: #0a5879; /* Fondo azul mas claro */
 }
+
+/* Estilo para los Campos de Entrada al Recibir Foco */
 form input:focus {
-    background-color: #a4daf183;
-    
+    background-color: #a4daf183; /* Fondo claro al enfocar */
 }
+
+/* Estilo Especifico para el Ultimo Campo al Recibir Foco */
 form input:last-of-type:focus {
-    background-color: #0a5879;
+    background-color: #0a5879; /* Fondo azul mas claro */
 }
 
-
+/* Enlaces Dentro de las Etiquetas Label */
 form label a {
-    color: #074167;
-    text-decoration: underline;
-    font-size: 0.9rem;
-    cursor: pointer;
+    color: #074167; /* Color azul oscuro */
+    text-decoration: underline; /* Subrayado por defecto */
+    font-size: 0.9rem; /* Tamaño de texto pequeño */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el enlace */
 }
 
+/* Estilo al Pasar el Mouse por los Enlaces */
 form label a:hover {
-    color: #0a5879;
-    text-decoration: none;
+    color: #0a5879; /* Azul mas claro */
+    text-decoration: none; /* Quita el subrayado */
 }
 
-
+/* Estilo para las Etiquetas de los Formularios */
 form label {
-    font-size: 0.9rem;
-    color: #666;
-    display: block;
-    margin-top: 1.3vh;
-    text-align: center;
+    font-size: 0.9rem; /* Tamaño de texto pequeño */
+    color: #666; /* Color gris oscuro */
+    display: block; /* Se muestran como bloques */
+    margin-top: 1.3vh; /* Espaciado superior */
+    text-align: center; /* Centra el texto de las etiquetas */
 }

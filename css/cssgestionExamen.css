@@ -1,184 +1,190 @@
+/* Reset General */
 * {
-    margin: 0; /* Eliminar márgenes predeterminados */
-    padding: 0; /* Eliminar relleno predeterminado */
+    margin: 0; /* Elimina margenes predeterminados */
+    padding: 0; /* Elimina relleno predeterminado */
 }
 
 body {
-    display: flex; /* Usar flexbox para la disposición */
-    flex-direction: column; /* Apilar elementos verticalmente */
-    height: 100vh; /* Altura de ventana */
-    background-color: #f0f0f0c7;
+    display: flex; /* Usa flexbox para la disposicion general */
+    flex-direction: column; /* Organiza los elementos en columna */
+    height: 100vh; /* Establece una altura igual a la ventana */
+    background-color: #f0f0f0c7; /* Fondo con color claro y algo de transparencia */
 }
 
+/* Header */
 header {
-    position: flex; /* Fijar el header en la parte superior */
-    height: 6vh; /* Altura del encabezado */
-    background-color: #419affde; /* Color de fondo */
-    display: flex; /* Usar flexbox para el contenido del header */
-    justify-content: center; /* Centrar horizontalmente los elementos */
-    align-items: center; /* Centrar verticalmente los elementos */
+    position: flex; /* Organiza el header como contenedor flexible */
+    height: 6vh; /* Define la altura del encabezado */
+    background-color: #419affde; /* Establece el color de fondo con algo de opacidad */
+    display: flex; /* Activa flexbox para alinear contenido */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    align-items: center; /* Centra los elementos verticalmente */
 }
 
 .headerDiv {
-    display: flex; /* Usar flexbox para el contenido del encabezado */
-    align-items: center; /* Centrar verticalmente los elementos */
-    justify-content: space-between; 
-    width: 100%; /* Ancho completo para alinear correctamente */
-    padding: 2vh; /* Espaciado horizontal dentro del header */
+    display: flex; /* Usa flexbox para organizar el contenido interno */
+    align-items: center; /* Alinea verticalmente los elementos */
+    justify-content: space-between; /* Espacia los elementos uniformemente */
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    padding: 2vh; /* Agrega espacio interno al contenedor */
 }
 
 .headerDiv img {
-    height: 5vh; /* Ajustar la altura de la imagen */
+    height: 5vh; /* Ajusta la altura de las imagenes del header */
 }
 
+/* Main */
 main {
-    flex: 1; /* Permitir que el main ocupe el espacio restante */
-    display: flex; /* Usar flexbox para organizar el contenido */
-    flex-direction: column; /* Apilar elementos verticalmente */
-    align-items: center; /* Centrar horizontalmente */
-    justify-content: center; /* Centrar verticalmente */
+    flex: 1; /* Permite que el contenedor principal ocupe todo el espacio restante */
+    display: flex; /* Usa flexbox para alinear el contenido */
+    flex-direction: column; /* Organiza los elementos en columna */
+    align-items: center; /* Centra los elementos horizontalmente */
+    justify-content: center; /* Centra los elementos verticalmente */
 }
 
-#gestion{
-    display: flex;
-    flex-direction: column;
-    height: 70vh;
-    width: 130vh;
-    border: 3px solid black;
-    background-color:#b6d7fc88;
-    box-shadow: 10px 10px 5px #aaaaaa;
-    overflow-y: auto;
+/* Seccion Gestion */
+#gestion {
+    display: flex; /* Activa flexbox para su contenido */
+    flex-direction: column; /* Organiza los elementos en columna */
+    height: 70vh; /* Define la altura del contenedor */
+    width: 130vh; /* Define el ancho del contenedor */
+    border: 3px solid black; /* Establece un borde negro */
+    background-color: #b6d7fc88; /* Fondo con un color azul claro y algo de transparencia */
+    box-shadow: 10px 10px 5px #aaaaaa; /* Agrega sombra al contenedor */
+    overflow-y: auto; /* Habilita el scroll vertical cuando el contenido exceda el espacio */
 }
 
-#gestion section{
-    display: flex;
-    justify-content: space-between;
-    text-align: center;
-    border-bottom: 2px solid black;
-    background-color: #7ab8ffe3;
+#gestion section {
+    display: flex; /* Usa flexbox para organizar elementos */
+    justify-content: space-between; /* Distribuye los elementos uniformemente */
+    text-align: center; /* Alinea el texto al centro */
+    border-bottom: 2px solid black; /* Agrega un borde inferior negro */
+    background-color: #7ab8ffe3; /* Aplica un fondo azul claro */
 }
 
 #gestion details:nth-child(even) {
-    background-color: #b6d7fcd2; 
-    border-top: 1px solid black;
+    background-color: #b6d7fcd2; /* Aplica un fondo diferente para los elementos pares */
+    border-top: 1px solid black; /* Agrega un borde superior negro */
 }
 
 #gestion details:nth-child(odd) {
-    background-color: transparent;
-    border-top: 1px solid black;
+    background-color: transparent; /* Fondo transparente para los elementos impares */
+    border-top: 1px solid black; /* Agrega un borde superior negro */
 }
+
 #gestion details:last-of-type {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid black; /* Agrega un borde inferior al ultimo elemento */
 }
 
 summary {
-    display: flex;
-    justify-content: space-between;
-    padding: 1vh;
+    display: flex; /* Usa flexbox para organizar contenido */
+    justify-content: space-between; /* Espacia uniformemente los elementos */
+    padding: 1vh; /* Agrega espacio interno */
 }
 
 details {
-    margin-bottom: 1vh; /* Espaciado entre cada examen */
-    padding: 1vh; /* Espaciado interno para el contenido */
+    margin-bottom: 1vh; /* Espaciado inferior entre elementos */
+    padding: 1vh; /* Espaciado interno */
     background-color: #f9f9f9; /* Fondo claro */
-    border: 1px solid #ccc; /* Borde gris */
+    border: 1px solid #ccc; /* Borde gris claro */
     border-radius: 10px; /* Bordes redondeados */
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
 
 details summary {
-    font-size: 18px; /* Texto más grande */
-    font-weight: bold; /* Negrita */
-    cursor: pointer; /* Cambiar cursor al pasar */
+    font-size: 18px; /* Define un tamaño de texto mas grande */
+    font-weight: bold; /* Negrita para el texto */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
 }
 
 details p {
     margin: 1vh 0; /* Espaciado vertical */
     font-size: 16px; /* Tamaño de texto moderado */
-    color: #333; /* Texto oscuro */
+    color: #333; /* Color de texto oscuro */
 }
 
-/* Alinear los botones */
+/* Alineacion de Botones */
 details div {
-    display: flex; /* Flexbox para alinear los botones */
-    justify-content: flex-end; /* Alinear botones a la derecha */
-    gap: 1vh; /* Separación entre botones */
+    display: flex; /* Usa flexbox para organizar botones */
+    justify-content: flex-end; /* Alinea los botones a la derecha */
+    gap: 1vh; /* Espaciado entre los botones */
 }
 
 details button {
-    margin: 0.5vh; /* Espaciado entre botones */
-    padding: 0.5vh 1vh; /* Relleno interno */
-    border: none; /* Sin borde */
+    margin: 0.5vh; /* Espaciado alrededor de los botones */
+    padding: 0.5vh 1vh; /* Espaciado interno de los botones */
+    border: none; /* Sin bordes */
     border-radius: 5px; /* Bordes redondeados */
-    font-size: 14px; /* Tamaño del texto */
-    font-weight: bold; /* Negrita para texto */
+    font-size: 14px; /* Tamaño de texto de los botones */
+    font-weight: bold; /* Negrita para el texto */
     color: white; /* Texto blanco */
-    cursor: pointer; /* Cambiar cursor al pasar */
-    transition: background-color 0.3s ease; /* Transición suave */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    transition: background-color 0.3s ease; /* Transicion suave al cambiar de color */
 }
 
-/* Botón Intentar */
+/* Boton Intentar */
 details button.intentar {
-    background-color: #4CAF50; /* Verde para Intentar */
+    background-color: #4CAF50; /* Fondo verde para el boton de intentar */
 }
 
 details button.intentar:hover {
-    background-color: #45a049; /* Verde oscuro al pasar el ratón */
+    background-color: #45a049; /* Fondo verde oscuro al pasar el cursor */
 }
 
-/* Botón Borrar */
+/* Boton Borrar */
 details button.borrar {
-    background-color: #f44336; /* Rojo para Borrar */
+    background-color: #f44336; /* Fondo rojo para el boton de borrar */
 }
 
 details button.borrar:hover {
-    background-color: #d32f2f; /* Rojo oscuro al pasar el ratón */
+    background-color: #d32f2f; /* Fondo rojo oscuro al pasar el cursor */
 }
 
+/* Footer y Header */
 .footerDiv, header {
-    height: 6vh; /* Altura de los encabezados y pies de página */
-    background-color: #60a8fade; /* Color de fondo con opacidad */
-    text-align: center; /* Centrar el texto horizontalmente */
-    line-height: 5.5vh; /* Altura de línea para centrar el texto verticalmente */
+    height: 6vh; /* Altura uniforme para el header y el footer */
+    background-color: #60a8fade; /* Fondo azul claro con opacidad */
+    text-align: center; /* Centrado horizontal del texto */
+    line-height: 5.5vh; /* Altura de linea para centrar verticalmente */
 }
 
 .footerDiv {
-    display: flex; /* Usar flexbox para el contenido del pie de página */
+    display: flex; /* Usa flexbox para organizar contenido */
     justify-content: space-between; /* Espacio entre los elementos */
-    align-items: center; /* Centrar verticalmente los elementos */
-    width: 100%; /* Ancho completo del footer */
+    align-items: center; /* Alinea verticalmente los elementos */
+    width: 100%; /* Ocupa todo el ancho */
 }
 
-.footerDiv a{
-    text-decoration: none; /*Decoraciones del texto*/
-    color:white; /*Color del texto*/
-    font-weight: bolder; /*Estilo o Tamaño del texto*/
-    
-}
-.footerDiv a:hover{
-    cursor: pointer;
-}
-
-.footerDiv a:last-of-type{
-    margin-right: 2vh;
-}
-
-/* Botón Crear Examen */
-#crearPregunta {
-    width: 30vh; /* Ancho del botón */
-    height: 6vh; /* Altura del botón */
-    background-color: #2196F3; /* Azul para Crear Examen */
+.footerDiv a {
+    text-decoration: none; /* Sin subrayado en los enlaces */
     color: white; /* Texto blanco */
-    border: none; /* Sin borde */
+    font-weight: bolder; /* Texto en negrita */
+}
+
+.footerDiv a:hover {
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+}
+
+.footerDiv a:last-of-type {
+    margin-right: 2vh; /* Espaciado a la derecha para el ultimo enlace */
+}
+
+/* Boton Crear Examen */
+#crearPregunta {
+    width: 30vh; /* Ancho del boton */
+    height: 6vh; /* Altura del boton */
+    background-color: #2196F3; /* Fondo azul para el boton */
+    color: white; /* Texto blanco */
+    border: none; /* Sin bordes */
     border-radius: 10px; /* Bordes redondeados */
-    font-family: 'Arial', sans-serif; /* Fuente */
+    font-family: 'Arial', sans-serif; /* Fuente del boton */
     font-size: 18px; /* Tamaño del texto */
-    font-weight: bold; /* Negrita */
-    cursor: pointer; /* Cambiar cursor al pasar */
+    font-weight: bold; /* Texto en negrita */
+    cursor: pointer; /* Cambia el cursor al pasar */
     margin-top: 2vh; /* Espaciado superior */
-    transition: background-color 0.3s ease; /* Transición suave */
+    transition: background-color 0.3s ease; /* Transicion suave al cambiar de color */
 }
 
 #crearPregunta:hover {
-    background-color: #1E88E5; /* Azul más oscuro al pasar */
+    background-color: #1E88E5; /* Fondo azul mas oscuro al pasar el cursor */
 }

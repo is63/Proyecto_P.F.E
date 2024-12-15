@@ -1,186 +1,204 @@
-/* General Reset */
+/* Reinicio general para eliminar margenes, rellenos y configurar el box-sizing */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin: 0; /* Elimina los margenes predeterminados */
+    padding: 0; /* Elimina los rellenos predeterminados */
+    box-sizing: border-box; /* Incluye el borde y relleno en las dimensiones del elemento */
 }
 
+/* Estilo general para el cuerpo */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+    font-family: Arial, sans-serif; /* Define la fuente del texto */
+    background-color: #f9f9f9; /* Color de fondo claro */
+    display: flex; /* Usa un diseño de flexbox */
+    flex-direction: column; /* Coloca los elementos hijos en columna */
+    min-height: 100vh; /* La altura del cuerpo ocupa toda la ventana */
 }
 
-/* Header */
+/* Estilo para el encabezado */
 header {
-    position: flex; /* Fijar el header en la parte superior */
-    height: 6vh; /* Altura del encabezado */
-    background-color: #419affde; /* Color de fondo */
-    display: flex; /* Usar flexbox para el contenido del header */
-    justify-content: center; /* Centrar horizontalmente los elementos */
-    align-items: center; /* Centrar verticalmente los elementos */
+    position: flex; /* Fija el encabezado en la parte superior */
+    height: 6vh; /* Define la altura del encabezado */
+    background-color: #419affde; /* Color de fondo azul claro */
+    display: flex; /* Usa flexbox para organizar los elementos */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    align-items: center; /* Centra los elementos verticalmente */
 }
 
+/* Contenedor interno del encabezado */
 .headerDiv {
-    display: flex; /* Usar flexbox para el contenido del encabezado */
-    align-items: center; /* Centrar verticalmente los elementos */
-    justify-content: space-between; 
-    width: 100%; /* Ancho completo para alinear correctamente */
-    padding: 2vh; /* Espaciado horizontal dentro del header */
+    display: flex; /* Usa flexbox para organizar los elementos */
+    align-items: center; /* Centra verticalmente los elementos */
+    justify-content: space-between; /* Distribuye los elementos hacia los extremos */
+    width: 100%; /* Ancho completo del contenedor */
+    padding: 2vh; /* Espaciado interno del encabezado */
 }
 
+/* Estilo para las imagenes del encabezado */
 .headerDiv img {
-    height: 5vh; /* Ajustar la altura de la imagen */
+    height: 5vh; /* Ajusta la altura de las imagenes */
 }
 
-/* Main content */
+/* Contenido principal de la pagina */
 main {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    flex: 1; /* Ocupa todo el espacio restante */
+    display: flex; /* Usa flexbox */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    align-items: center; /* Centra los elementos verticalmente */
 }
 
+/* Estilo del contenedor principal para gestionar categorias */
 #gestionarCategorias {
-    width: 80%;
-    max-width: 600px;
+    width: 80%; /* Ancho del 80% del contenedor padre */
+    max-width: 600px; /* Limite maximo del ancho */
     height: 70vh; /* Altura predeterminada */
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column; /* Para alinear correctamente los elementos internos */
-    box-shadow: 10px 10px 5px #aaaaaa;
+    background: white; /* Fondo blanco */
+    padding: 20px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra alrededor del contenedor */
+    display: flex; /* Usa flexbox */
+    flex-direction: column; /* Coloca los elementos hijos en columna */
+    box-shadow: 10px 10px 5px #aaaaaa; /* Sombra adicional */
 }
 
+/* Estilo para el titulo del contenedor de categorias */
 #gestionarCategorias h1 {
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 20px;
-    text-align: center;
+    font-size: 24px; /* Tamaño de la fuente */
+    color: #333; /* Color del texto */
+    margin-bottom: 20px; /* Espaciado inferior */
+    text-align: center; /* Centra el texto horizontalmente */
 }
 
-/* Lista de Categorías */
+/* Contenedor de la lista de categorias */
 #listaCategorias {
-    flex: 1; /* Permite que el contenedor de la lista tome el espacio sobrante */
-    overflow-y: auto; /* Habilitar el scroll si el contenido es demasiado grande */
-    margin-top: 15px;
-    text-align: left;
+    flex: 1; /* Permite que tome el espacio sobrante */
+    overflow-y: auto; /* Habilita el scroll vertical si el contenido supera el espacio disponible */
+    margin-top: 15px; /* Espaciado superior */
+    text-align: left; /* Alinea el texto a la izquierda */
     padding: 10px; /* Espaciado interno */
-    border: 1px solid #ccc; /* Borde para diferenciar el área */
-    border-radius: 5px;
-    background-color: #f9f9f9;
+    border: 1px solid #ccc; /* Borde gris para diferenciar el area */
+    border-radius: 5px; /* Bordes redondeados */
+    background-color: #f9f9f9; /* Fondo gris claro */
 }
 
+/* Estilo para las listas no ordenadas */
 #listaCategorias ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+    list-style: none; /* Elimina los puntos de las listas */
+    padding: 0; /* Sin relleno interno */
+    margin: 0; /* Sin margen */
 }
 
+/* Estilo para los elementos de la lista */
 #listaCategorias ul li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-    font-size: 18px;
-    color: #555;
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 5px;
+    display: flex; /* Usa flexbox */
+    justify-content: space-between; /* Distribuye los elementos en los extremos */
+    align-items: center; /* Centra verticalmente los elementos */
+    margin-bottom: 10px; /* Espaciado inferior entre elementos */
+    font-size: 18px; /* Tamaño de la fuente */
+    color: #555; /* Color del texto */
+    border-bottom: 1px solid #ccc; /* Linea inferior para separar los elementos */
+    padding-bottom: 5px; /* Espaciado inferior interno */
 }
 
+/* Estilo para el boton de borrar una categoria */
 #listaCategorias ul li #botonBorrar {
-    background-color: #f44336;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 5px 10px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: background-color 0.3s ease;
+    background-color: #f44336; /* Color rojo para el boton */
+    color: white; /* Texto blanco */
+    border: none; /* Sin bordes */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 5px 10px; /* Relleno interno */
+    cursor: pointer; /* Cambia el cursor a una mano al pasar por encima */
+    font-size: 14px; /* Tamaño de la fuente */
+    transition: background-color 0.3s ease; /* Transicion suave en el cambio de color */
 }
 
+/* Cambia el color del boton de borrar al pasar el cursor */
 #listaCategorias ul li #botonBorrar:hover {
-    background-color: #d32f2f;
+    background-color: #d32f2f; /* Rojo mas oscuro */
 }
 
-/* Formulario para agregar categoría */
+/* Formulario para agregar una categoria */
 #formAgregarCategoria {
-    margin-top: 20px;
+    margin-top: 20px; /* Espaciado superior */
 }
 
+/* Estilo para las etiquetas del formulario */
 #formAgregarCategoria label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: #555;
+    display: block; /* Coloca las etiquetas en linea */
+    font-weight: bold; /* Texto en negrita */
+    margin-bottom: 10px; /* Espaciado inferior */
+    color: #555; /* Color del texto */
 }
 
+/* Estilo para los campos de entrada del formulario */
 #formAgregarCategoria input {
-    width: calc(100% - 110px);
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-    margin-right: 10px;
+    width: calc(100% - 110px); /* Ajusta el ancho para dejar espacio al boton */
+    padding: 10px; /* Relleno interno */
+    border: 1px solid #ccc; /* Borde gris claro */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 16px; /* Tamaño de la fuente */
+    margin-right: 10px; /* Espaciado derecho */
 }
 
+/* Estilo para el boton de agregar categoria */
 #formAgregarCategoria button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    background-color: #4CAF50; /* Color verde */
+    color: white; /* Texto blanco */
+    border: none; /* Sin bordes */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px; /* Relleno interno */
+    font-size: 16px; /* Tamaño de la fuente */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    transition: background-color 0.3s ease; /* Transicion suave en el cambio de color */
 }
 
+/* Cambia el color del boton al pasar el cursor */
 #formAgregarCategoria button:hover {
-    background-color: #45a049;
+    background-color: #45a049; /* Verde mas oscuro */
 }
 
-/* Footer */
+/* Estilo general para el pie de pagina y el encabezado */
 .footerDiv, header {
-    height: 6vh; /* Altura de los encabezados y pies de página */
-    background-color: #60a8fade; /* Color de fondo con opacidad */
-    text-align: center; /* Centrar el texto horizontalmente */
-    line-height: 5.5vh; /* Altura de línea para centrar el texto verticalmente */
+    height: 6vh; /* Altura de ambos elementos */
+    background-color: #60a8fade; /* Color de fondo azul claro con opacidad */
+    text-align: center; /* Alinea el texto horizontalmente */
+    line-height: 5.5vh; /* Centra verticalmente el texto */
 }
 
+/* Contenedor del pie de pagina */
 .footerDiv {
-    display: flex; /* Usar flexbox para el contenido del pie de página */
-    justify-content: space-between; /* Espacio entre los elementos */
-    align-items: center; /* Centrar verticalmente los elementos */
-    width: 100%; /* Ancho completo del footer */
+    display: flex; /* Usa flexbox */
+    justify-content: space-between; /* Distribuye los elementos en los extremos */
+    align-items: center; /* Centra verticalmente los elementos */
+    width: 100%; /* Ancho completo */
 }
 
+/* Estilo para los enlaces en el pie de pagina */
 .footerDiv a {
-    text-decoration: none; /*Decoraciones del texto*/
-    color: white; /*Color del texto*/
-    font-weight: bolder; /*Estilo o Tamaño del texto*/
+    text-decoration: none; /* Sin subrayado */
+    color: white; /* Texto blanco */
+    font-weight: bolder; /* Texto en negrita */
 }
 
+/* Cambia el cursor al pasar por encima de los enlaces */
 .footerDiv a:hover {
-    cursor: pointer;
+    cursor: pointer; /* Cambia el cursor a una mano */
 }
 
+/* Margen derecho para el ultimo enlace */
 .footerDiv a:last-of-type {
-    margin-right: 2vh;
+    margin-right: 2vh; /* Espaciado derecho */
 }
 
-/* Botón */
+/* Estilo general para los botones */
 button {
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    border: none; /* Sin bordes */
+    border-radius: 5px; /* Bordes redondeados */
+    font-weight: bold; /* Texto en negrita */
+    transition: background-color 0.3s ease; /* Transicion suave en el cambio de color */
 }
 
+/* Cambia la opacidad del boton al pasar el cursor */
 button:hover {
-    opacity: 0.9;
+    opacity: 0.9; /* Reduce la opacidad */
 }
