@@ -1,7 +1,5 @@
 window.addEventListener("DOMContentLoaded", function () {
 
-
-
     //Boton de Guardar
     let botonGuardar = this.document.getElementById("botonGuardar");
 
@@ -25,12 +23,13 @@ window.addEventListener("DOMContentLoaded", function () {
     //Si no existe el array de categorías lo creo de nuevo
     if (!categorias) {  //Si no existe el array de categorías lo creo de nuevo
         categorias = ["ADAS", "Señales", "Carreteras"];
+        localStorage.setItem("categorias", JSON.stringify(categorias));
     }
 
     let selectCategoria = this.document.getElementById("selectCategorias");
 
     categorias.forEach(categoria => {
-        console.log(categoria);
+        //console.log(categoria);
         
         let opcion = document.createElement("option");
         opcion.setAttribute("value", categoria);

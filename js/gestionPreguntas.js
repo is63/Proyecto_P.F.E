@@ -100,8 +100,15 @@ window.addEventListener("DOMContentLoaded", function () {
 
         // Crear el párrafo con detalles
         let parrafo = document.createElement('p');
-        parrafo.textContent = `Respuestas:`; // Texto del párrafo
+        parrafo.textContent = `Categoria: ${categoriaP}`; // Texto del párrafo
+        parrafo.style.fontWeight = "bold";
+        parrafo.style.textDecoration = "underline";
         divDetalles.appendChild(parrafo);
+
+        
+        let parrafo1 = document.createElement('p');
+        parrafo1.textContent = `Respuestas:`; // Texto del párrafo
+        divDetalles.appendChild(parrafo1);
 
         let parrafo2 = document.createElement('p');
         if (correcta == 1) {

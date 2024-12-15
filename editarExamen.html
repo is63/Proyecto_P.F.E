@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/cssmodificarExamen.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+    <script src="js/editarExamen.js"></script>
     <title>Editar Examen</title>
 </head>
 
@@ -18,55 +19,26 @@
         </div>
     </header>
     <main>
-        <div id="modificar-examen">
+        <div id="modificarExamen">
             <h1>Editar Examen</h1>
-            <form id="form-editar">
-                <label for="nombre-examen">Nombre del Examen:</label>
-                <input type="text" id="nombre-examen" name="nombre-examen" value="Examen Actual" >
+            <form id="formEditar">
+                <label for="nombreExamen">Nombre del Examen:</label>
+                <input type="text" id="nombreExamen" name="nombreExamen">
 
-                <label for="descripcion-examen">Descripción:</label>
-                <textarea id="descripcion-examen" name="descripcion-examen" rows="4" >
-Detalles actuales del examen
-                </textarea>
+                <label for="descripcionExamen">Descripción:</label>
+                <textarea id="descripcionExamen" name="descripcionExamen" rows="4"></textarea>
 
                 <label for="categoria">Categoría:</label>
-                <select id="categoria" name="categoria" >
-                    <option value="teorico">Teórico</option>
-                    <option value="practico">Práctico</option>
-                    <option value="mixto">Mixto</option>
+                <select id="selectCategoria" name="categoria">
+                    <option value="" disabled selected>Elige una categoría...</option>
                 </select>
 
                 <h2>Seleccionar preguntas</h2>
-                <div id="lista-preguntas">
-                    <div class="pregunta">
-                        <input type="checkbox" id="pregunta1" name="pregunta1" checked>
-                        <label for="pregunta1">Pregunta 1</label>
-                    </div>
-                    <div class="pregunta">
-                        <input type="checkbox" id="pregunta2" name="pregunta2">
-                        <label for="pregunta2">Pregunta 2</label>
-                    </div>
-                    <div class="pregunta">
-                        <input type="checkbox" id="pregunta3" name="pregunta3" checked>
-                        <label for="pregunta3">Pregunta 3</label>
-                    </div>
-                    <div class="pregunta">
-                        <input type="checkbox" id="pregunta4" name="pregunta4">
-                        <label for="pregunta4">Pregunta 4</label>
-                    </div>
-                    <div class="pregunta">
-                        <input type="checkbox" id="pregunta5" name="pregunta5">
-                        <label for="pregunta5">Pregunta 5</label>
-                    </div>
-                    <div class="pregunta">
-                        <input type="checkbox" id="pregunta6" name="pregunta6">
-                        <label for="pregunta6">Pregunta 6</label>
-                    </div>
-                    <!-- Agregar más preguntas aquí -->
+                <div id="listaPreguntas">
                 </div>
 
-                <button type="submit" id="guardar-cambios">Guardar Cambios</button>
-                <button type="button" id="cancelar" onclick="window.history.back();">Cancelar</button>
+                <button type="button" id="guardarCambios">Guardar Cambios</button>
+                <button type="button" id="cancelar">Cancelar</button>
             </form>
         </div>
     </main>
