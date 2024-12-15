@@ -59,6 +59,10 @@ main {
 }
 
 /* Estilo para los detalles y resumen */
+#preguntasContainer{
+    overflow-y: auto;
+}
+
 #preguntasContainer details {
     border: 1px solid #ddd; /* Borde ligero */
     border-radius: 5px; /* Bordes redondeados */
@@ -105,6 +109,10 @@ button {
 
 .borrar:hover {
     background-color: #d32f2f; /* Rojo más oscuro al pasar el mouse */
+}
+
+#ordenar{
+    cursor: pointer;
 }
 
 /* Botón Crear Pregunta */
