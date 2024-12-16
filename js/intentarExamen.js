@@ -7,17 +7,21 @@ window.addEventListener("DOMContentLoaded", function () {
     // Guardo el botón para terminar el intento
     let botonTerminarIntento = document.getElementById("terminarIntento");
 
+    // Guardo los botones del footer de Volver y Salir
+    let botonVolver = document.getElementById("botonVolver");
+    let botonSalir = document.getElementById("botonSalir");
+
     // Guardo el elemento donde se mostrará el rol del usuario
     let mostrarRol = document.getElementById("rol");
 
     //Recupero el usuario que ha iniciado Sesion
     let usuarioSesion = (localStorage.getItem("usuarioSesion"));
-    
+
     //Si no hay un usuario registrado o esta vacio, redirige al index para iniciar sesion
     if (usuarioSesion == "" || usuarioSesion == undefined) {
         window.location.href = "index.html";
     }
-   
+
     // Recupera el rol de sesión almacenado en localStorage
     let rol = localStorage.getItem("rolSesion");
 
@@ -77,7 +81,7 @@ window.addEventListener("DOMContentLoaded", function () {
         if (examen.split("|")[0] == tituloExamen) {
 
             // Divide el examen y obtiene las preguntas
-            preguntasExamen = examen.split("|")[3].split("~"); 
+            preguntasExamen = examen.split("|")[3].split("~");
 
             // Recorre cada pregunta para obtener las respuestas
             preguntas.forEach(pregunta => {
@@ -150,15 +154,15 @@ window.addEventListener("DOMContentLoaded", function () {
                 if (respuesta.checked) {
                     // Guardo el valor de la respuesta seleccionada
                     respuestaSeleccionada = parseInt(respuesta.value);  // Lo paso a numero con parseInt para que la operacion de comparacion siguiente
-                                                                        //no lo compare como 2 Strings
+                    //no lo compare como 2 Strings
                 }
             });
 
             // Guardo la respuesta correcta de la pregunta
-            let respuestaCorrecta = preguntas[index2].split("|")[5]; 
+            let respuestaCorrecta = preguntas[index2].split("|")[5];
 
             // Comparo la respuesta seleccionada con la respuesta correcta
-            if (respuestaSeleccionada == respuestaCorrecta) { 
+            if (respuestaSeleccionada == respuestaCorrecta) {
 
                 // Si la respuesta es correcta, la resalto en verde
                 respuestasSeleccionadas.forEach(respuesta => {
@@ -176,5 +180,17 @@ window.addEventListener("DOMContentLoaded", function () {
             }
             index2++; // Incrementa el índice para la siguiente pregunta
         });
+    });
+
+    // Boton de Volver del Footer
+    botonVolver.addEventListener("click", () => {
+        // Redirecciono a la pagina anterior
+        window.location.href = "GestionExamen.html"; // No uso window.history.back(), por si viene de una pagina siguiente
+    });
+
+    // Boton de Salir del Footer
+    botonSalir.addEventListener("click", function () {
+        // Redirecciono al index para que se reescriba el localStorage de usuarioSesion y vuelva a iniciar sesion
+        window.location.href = "index.html"; // Redirige a la pagina de inicio
     });
 });

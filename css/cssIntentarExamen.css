@@ -7,27 +7,26 @@ body {
     background-color: #f5f5f5; /* Aplica un color de fondo claro */
 }
 
-/* Header */
+
 header {
-    height: 6vh; /* Define la altura del encabezado */
-    background-color: #419affde; /* Establece el color de fondo */
-    display: flex; /* Usa flexbox para organizar el contenido */
-    justify-content: center; /* Centra el contenido horizontalmente */
-    align-items: center; /* Centra el contenido verticalmente */
+    height: 5vh; /* Altura del encabezado */
+    background-color: #419affde; /* Color de fondo */
+    display: flex; /* Usar flexbox para el contenido del header */
+    justify-content: center; /* Centrar horizontalmente los elementos */
+    align-items: center; /* Centrar verticalmente los elementos */
 }
 
 .headerDiv {
-    display: flex; /* Flexbox para organizar el contenido interno */
-    align-items: center; /* Alinea los elementos verticalmente */
-    justify-content: space-between; /* Espacia uniformemente los elementos */
-    width: 100%; /* Abarca todo el ancho disponible */
-    padding: 2vh; /* Agrega espacio interno en los lados */
+    display: flex; /* Usar flexbox para el contenido del encabezado */
+    align-items: center; /* Centrar verticalmente los elementos */
+    justify-content: space-between; 
+    width: 100%; /* Ancho completo para alinear correctamente */
+    padding: 2vh; /* Espaciado horizontal dentro del header */
 }
 
 .headerDiv img {
-    height: 5vh; /* Ajusta la altura de las imagenes dentro del encabezado */
+    height: 5vh; /* Ajustar la altura de la imagen */
 }
-
 /* Contenedor Principal */
 #examenContainer {
     display: flex; /* Flexbox para organizar el contenido */
@@ -89,16 +88,44 @@ header {
 /* Boton de Terminar */
 #terminarIntento {
     padding: 10px 20px; /* Espaciado interno para mayor tamaño del boton */
-    background-color: #007BFF; /* Fondo azul para el boton */
+    background-color: #007bffd2; /* Fondo azul para el boton */
     color: white; /* Texto blanco */
     font-size: 16px; /* Tamaño del texto */
     border: none; /* Sin borde */
-    border-radius: 5px; /* Bordes redondeados */
+    border-radius: 15px; /* Bordes redondeados */
     cursor: pointer; /* Cambia el cursor al pasar sobre el boton */
     align-self: center; /* Centra el boton dentro del contenedor */
     width: 100%; /* Ancho completo del boton */
 }
 
 #terminarIntento:hover {
-    background-color: #0056b3; /* Cambia el color del boton al pasar el cursor */
+    background-color: #0561c4; /* Cambia el color del boton al pasar el cursor */
+}
+/* Footer */
+.footerDiv, header {
+    height: 5vh; /* Altura de los encabezados y pies de página */
+    background-color: #60a8fade; /* Color de fondo con opacidad */
+    text-align: center; /* Centrar el texto horizontalmente */
+    line-height: 5.5vh; /* Altura de línea para centrar el texto verticalmente */
+}
+
+.footerDiv {
+    display: flex; /* Usar flexbox para el contenido del pie de página */
+    justify-content: space-between; /* Espacio entre los elementos */
+    align-items: center; /* Centrar verticalmente los elementos */
+    width: 100%; /* Ancho completo del footer */
+}
+
+.footerDiv a {
+    text-decoration: none; /*Decoraciones del texto*/
+    color: white; /*Color del texto*/
+    font-weight: bolder; /*Estilo o Tamaño del texto*/
+}
+
+.footerDiv a:hover {
+    cursor: pointer;
+}
+
+.footerDiv a:last-of-type {
+    margin-right: 2vh;
 }
