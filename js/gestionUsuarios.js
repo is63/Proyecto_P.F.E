@@ -7,6 +7,14 @@ window.addEventListener("DOMContentLoaded", function () {
     // Guardo los div donde voy a mostrar los usuarios
     let mostrarValidados = this.document.getElementById("verificados");
 
+    //Recupero el usuario que ha iniciado Sesion
+    let usuarioSesion = (localStorage.getItem("usuarioSesion"));
+
+    //Si no hay un usuario registrado o esta vacio, redirige al index para iniciar sesion
+    if (usuarioSesion == "" || usuarioSesion == undefined) {
+        window.location.href = "index.html";
+    }
+
     // Guardo el mensaje de rol del Header
     let mostrarRol = this.document.getElementById("rol");
 
@@ -225,7 +233,7 @@ window.addEventListener("DOMContentLoaded", function () {
         // Si le da a editar Rol
         if (event.target.matches("#editarRol")) {
             event.preventDefault();
-            
+
             //Selecciono el parrado donde se ha hecho click
             let p = event.target.closest("p");
 

@@ -10,6 +10,14 @@ window.addEventListener("DOMContentLoaded", function () {
     // Guardo el elemento donde se mostrará el rol del usuario
     let mostrarRol = document.getElementById("rol");
 
+    //Recupero el usuario que ha iniciado Sesion
+    let usuarioSesion = (localStorage.getItem("usuarioSesion"));
+    
+    //Si no hay un usuario registrado o esta vacio, redirige al index para iniciar sesion
+    if (usuarioSesion == "" || usuarioSesion == undefined) {
+        window.location.href = "index.html";
+    }
+   
     // Recupera el rol de sesión almacenado en localStorage
     let rol = localStorage.getItem("rolSesion");
 

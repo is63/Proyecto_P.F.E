@@ -10,6 +10,14 @@ window.addEventListener("DOMContentLoaded", function () {
     //guardo la lista donde se van a escribir las categorias
     let lista = document.querySelector("#listaCategorias ul");
 
+    //Recupero el usuario que ha iniciado Sesion
+    let usuarioSesion = (localStorage.getItem("usuarioSesion"));
+    
+    //Si no hay un usuario registrado o esta vacio, redirige al index para iniciar sesion
+    if (usuarioSesion == "" || usuarioSesion == undefined) {
+        window.location.href = "index.html";
+    }
+
     //Guardo el elemento donde se va a mostrar el rol que se ha seleccionado
     let mostrarRol = document.getElementById("rol");
 

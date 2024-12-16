@@ -12,6 +12,14 @@ window.addEventListener("DOMContentLoaded", function () {
     let botonVolver = document.getElementById("botonVolver");
     let botonSalir = document.getElementById("botonSalir");
 
+    //Recupero el usuario que ha iniciado Sesion
+    let usuarioSesion = (localStorage.getItem("usuarioSesion"));
+    
+    //Si no hay un usuario registrado o esta vacio, redirige al index para iniciar sesion
+    if (usuarioSesion == "" || usuarioSesion == undefined) {
+        window.location.href = "index.html";
+    }
+
     // Mostrar el rol que se selecciono previamente
     let mostrarRol = document.getElementById("rol");
     // Recupera el rol de sesion almacenado en localStorage

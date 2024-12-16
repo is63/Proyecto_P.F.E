@@ -11,17 +11,25 @@ window.addEventListener("DOMContentLoaded", function () {
     let botonSalir = document.getElementById("botonSalir");
 
 
+    //Recupero el usuario que ha iniciado Sesion
+    let usuarioSesion = (localStorage.getItem("usuarioSesion"));
+
+    //Si no hay un usuario registrado o esta vacio, redirige al index para iniciar sesion
+    if (usuarioSesion == "" || usuarioSesion == undefined) {
+        window.location.href = "index.html";
+    }
+
     //Crear array de preguntas que no se borre como en el index
     let preguntas = [];
     //Si el localStorage de preguntas existe lo almaceno en preguntas
-    if(localStorage.getItem("preguntas")){
+    if (localStorage.getItem("preguntas")) {
         preguntas = JSON.parse(localStorage.getItem("preguntas"));
     }
 
     //Guardo el array de categorias
     let categorias = JSON.parse(localStorage.getItem("categorias"));
     //Si no existe el array de categorías lo creo de nuevo
-    if (!categorias) { 
+    if (!categorias) {
         categorias = ["ADAS", "Señales", "Carreteras"];
         localStorage.setItem("categorias", JSON.stringify(categorias));
     }
@@ -141,7 +149,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
         }
 
-        if(!categoria){
+        if (!categoria) {
             //Le doy un estilo al mensaje de error
             mensajeErrorCategoria.textContent = "Selecciona una categoria valida";
             mensajeErrorCategoria.style.color = "red";
@@ -186,14 +194,14 @@ window.addEventListener("DOMContentLoaded", function () {
             console.log("deberia detenerse la ejecuccion del programa");
             return;
         }
-        
+
         //Si no hay ningun error guardo la pregunta en el array de preguntas y lo almaceno en el LocalStorage
-        else{
+        else {
             let preguntaCompleta = `${pregunta} | ${categoria} | ${respuesta1} | ${respuesta2} | ${respuesta3} | ${valorCorrecto}`;
             preguntas.push(preguntaCompleta);
 
             localStorage.setItem("preguntas", JSON.stringify(preguntas));
-            
+
             //Redirecciono a la pagina de Gestionar Preguntas
             window.location.href = "gestionPreguntas.html";
         }

@@ -10,6 +10,14 @@ window.addEventListener("DOMContentLoaded", function () {
     let botonVolver = document.getElementById("botonVolver");
     let botonSalir = document.getElementById("botonSalir");
 
+    //Recupero el usuario que ha iniciado Sesion
+    let usuarioSesion = (localStorage.getItem("usuarioSesion"));
+    
+    //Si no hay un usuario registrado o esta vacio, redirige al index para iniciar sesion
+    if (usuarioSesion == "" || usuarioSesion == undefined) {
+        window.location.href = "index.html";
+    }
+
     // Si no hay rol, redirige a la página de inicio de sesión
     if (!rol) {
         window.location.href = "index.html";
